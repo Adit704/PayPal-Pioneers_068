@@ -8,7 +8,6 @@ export function Cart(){
     const [totalAmount, setTotalAmount] = useState(1000)
     const dispatch = useDispatch();
     useEffect(()=>{
-        dispatch(fetchCategory());
         localStorage.setItem("wineCart", JSON.stringify({"1":1,"2":1,"10":1,"15":1,"20":1}))
     },[])
     const cart = useMemo(()=>{
