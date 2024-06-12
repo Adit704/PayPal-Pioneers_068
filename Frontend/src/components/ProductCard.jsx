@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/productCard.css'
 
-export const ProductCard = () => {
+export const ProductCard = ({image, price, title}) => {
   return (
     <div className='product-card-container'>
         <div className='product-top-section'>
@@ -15,10 +15,10 @@ export const ProductCard = () => {
             </div>
         </div>
         <div className='product-image-container'>
-            <img src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L2pvYjY4Ni0xNjQtcC5wbmc.png" alt="wine bottle" className='product-image' />
+            <img src={image} alt="wine bottle" className='product-image' />
         </div>
         <div className='product-desc-container'>
-            <p className='product-desc'>chateau Beauliew cuvee Alexander, 0.75 L</p>
+            <p className='product-desc'>{title}</p>
         </div>
         <div className='product-country'>
             <span className='product-country-span'>🇫🇷 France</span>
@@ -27,7 +27,7 @@ export const ProductCard = () => {
         </div>
         <div className='product-border'></div>
         <div className='product-price'>
-            <span className='product-price-1'>710$</span>
+            <span className='product-price-1'>{price}$</span>
             <span className='product-cart-button'><i class="fa-solid fa-plus"></i></span>
         </div>
     </div>
