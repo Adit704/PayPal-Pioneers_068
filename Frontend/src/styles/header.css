@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#landing_page_header {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  height: 10vh;
+}
+
+.landing_page_header_logo_parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  width: 70%;
+  margin-top: -1.5vh;
+  margin-left: 2vw;
+}
+
+.landing_page_header_logo {
+  width: 100%;
+  height: 100%;
+}
+
+
+.landing_page_header_search_parent_parent {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.landing_page_header_search_parent {
+  height: 5.5vh;
+  margin-top: 2vh;
+}
+
+.landing_page_header_search {
+  width: 80%;
+  height: inherit;
+  font-size: 1.2rem;
+  padding-left: 1vw;
+  font-weight: bold;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 2px 5px 8px 1px rgba(0, 0, 0, 0.2);
+}
+
+.landing_page_header_search_btn {
+  height: inherit;
+  width: 15%;
+  transform: translate(0, -0.3vh);
+  border-style: none;
+  border-radius: 5px;
+  box-shadow: 2px 5px 8px 1px rgba(0, 0, 0, 0.2);
+}
+
+.landing_page_header_icons {
+  display: flex;
+  justify-content: space-between;
+  height: inherit;
+  gap: 3vw;
+  margin: 2.2vh 5vw 0 10vw;
+}
+
+.landing_page_header_login,
+.landing_page_header_signup,
+.landing_page_header_cart, 
+.landing_page_header_search_btn {
+  border-bottom: 2px solid black;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+}
+
+.landing_page_header_login,
+.landing_page_header_signup,
+.landing_page_header_cart {
+  width: 8vw;
+  height: 5vh;
+  color: green;
+  border-radius: 5px;  
+  font-size: 1.1rem;
+}
+
+
+.landing_page_header_cart:hover, 
+.landing_page_header_login:hover, 
+.landing_page_header_signup:hover, 
+.landing_page_header_search_btn:hover {
+  box-shadow: 2px 5px 8px 1px rgba(0, 0, 0, 0.2);
+  background-color: rgb(82, 82, 207);
+  color: white;
+}
+
+.landing_page_header_cart:active, 
+.landing_page_header_login:active, 
+.landing_page_header_signup:active, 
+.landing_page_header_search_btn:active{
+  background-color: rgb(209, 82, 209);
+}
+
+
