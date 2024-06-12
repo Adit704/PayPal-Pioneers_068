@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=PT+Mono&display=swap');
+*{
+    font-family: "PT Mono", monospace;
+    font-weight: bold;
+    background-color: #FFF8E9;
+    color: #1e1e1e;
+}
+.cart{
+    max-width: 800px;
+    margin: auto;
+    border: 1px solid;
+    padding: 10px 60px;
+    min-height: 95vh;
+    box-sizing: border-box;
+
+}
+h1{
+    text-align: center;
+}
+.progressBar{
+    text-align: center;
+    padding: 0px 60px 20px 60px;
+    border: 1px solid green;
+}
+#progress-bar{
+    width: 100%;
+    height:8px;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid;
+    border-radius: 20px;
+}
+
+#progress-bar::-webkit-progress-bar {
+    background-color: transparent;
+  }
+  #progress-bar::-webkit-progress-value {
+    background-color: green;
+  }
+.progress-bar-section{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.points-extra-info{
+    font-family: "Nunito", sans-serif;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 600;
+}
