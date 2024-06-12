@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=PT+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Overpass:ital,wght@0,100..900;1,100..900&family=PT+Mono&display=swap');
+.producr-main-page-container{
+    background-color: #FFF8E9;
+    padding: 20px;
+  }
+  .product-page-navbar{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+    height: 1vh;
+    font-family: "Nunito", sans-serif;
+  }
+  .product-page-navbar > span {
+    border-right: 2px solid;
+    padding-right: 5px;
+    font-weight: 500;
+  }
+  .product-page-navbar > p {
+    font-size: 13px;
+    color: rgb(55, 55, 55);
+  }
+  .product-page-head {
+      font-size: 28px;
+      font-family: "PT Mono", monospace;
+      width: 70%;
+  }
+  .productpage-body-container{
+    display: flex;
+    border: 1px solid black;
+  }
+  .productpage-image{
+    padding: 20px;
+    border-right: 1px solid black;
+  }
+  .product-body-right-top{
+    border-bottom: 1px solid black;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .product-body-right-top-content{
+    display: flex;
+    align-items: center;
+    gap: 70px;
+  }
+  .productpage-rating{
+    margin: 0;
+  }
