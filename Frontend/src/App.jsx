@@ -5,6 +5,10 @@ import { useDispatch } from 'react-redux';
 import { fetchCategory } from './redux/Actions/fetchProducts.js';
 import { Routes } from 'react-router-dom';
 
+// import { DashBoard } from "./components/dashboard/DashBoard"
+
+
+
 function App() {
   const dispatch = useDispatch()
   useEffect(()=>{
@@ -17,7 +21,8 @@ function App() {
     <Routes>
     </Routes>
 
-    </>
+    {/* <DashBoard/> */}
+      </>
   )
 }
 
