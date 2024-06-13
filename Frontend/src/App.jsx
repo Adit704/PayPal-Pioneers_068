@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { fetchCategory } from './redux/Actions/fetchProducts.js';
 import { Routes, Route } from 'react-router-dom';
 import { ProductPage } from './components/ProductPage';
+import { HomePageDashBoard } from './components/HomePageDashBoard.jsx';
 
 function App() {
   const dispatch = useDispatch()
@@ -13,12 +14,12 @@ function App() {
     },[])
   return (
     <>
-    {/* <Header/>
-    <HeroCarausal/>
+    <HomePageDashBoard/>
+
     <Routes>
-        <Route path="/productpage" element={<ProductPage />} />
-    </Routes> */}
-    <ProductPage />
+        {/* <Route path="/productpage" element={<ProductPage />} /> */}
+    </Routes>
+   
     </>
   )
 }
