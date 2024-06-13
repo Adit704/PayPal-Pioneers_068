@@ -2,7 +2,7 @@ import { FiHeart } from "react-icons/fi"; /** */
 // import { AiOutlineShoppingCart, AiOutlineUserAdd } from "react-icons/ai";
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { AiOutlineUserAdd } from 'react-icons/ai';
-
+import "../styles/Nav.css"
 
 const Nav = ({ handleInputChange, query }) => {
   return (
