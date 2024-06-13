@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/productCard.css'
 
-export const ProductCard = ({image, price, title}) => {
+export const ProductCard = ({image, price, title, id}) => {
   return (
     <div className='product-card-container'>
         <div className='product-top-section'>
@@ -14,6 +14,10 @@ export const ProductCard = ({image, price, title}) => {
                 <span><i className="fa-regular fa-heart heart-icon"></i></span>
             </div>
         </div>
+        <div onClick={() => {localStorage.setItem("currentCard", id)
+            
+        }}>
+
         <div className='product-image-container'>
             <img src={image} alt="wine bottle" className='product-image' />
         </div>
@@ -24,6 +28,7 @@ export const ProductCard = ({image, price, title}) => {
             <span className='product-country-span'>🇫🇷 France</span>
             <span className='product-country-span'>Rose</span>
             <span className='product-country-span'>Dry</span>
+        </div>
         </div>
         <div className='product-border'></div>
         <div className='product-price'>

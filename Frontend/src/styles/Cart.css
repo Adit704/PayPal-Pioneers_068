@@ -1,25 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=PT+Mono&display=swap');
-*{
+
+.cart{
     font-family: "PT Mono", monospace;
     font-weight: bold;
-    background-color: #FFF8E9;
     color: #1e1e1e;
-}
-.cart{
-    max-width: 800px;
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    z-index: 999;
+    background-color: #FFF8E9;
+    /* max-width: 800px; */
+    width: 600px;
+    min-width: 400px;
     margin: auto;
     border: 1px solid;
-    padding: 10px 60px;
-    min-height: 95vh;
+    padding: 10px 3rem;
+    height: 100vh;
     box-sizing: border-box;
+    overflow: scroll;
 
 }
-h1{
+@media (max-width:800px) {
+    .cart{
+        width: 100%;
+
+    }
+}
+.cart-title{
     text-align: center;
+    font-size: 26px;
+    margin: auto;
+    margin-bottom: 30px;
 }
 .progressBar{
+    /* min-width: 320px; */
     text-align: center;
-    padding: 0px 60px 20px 60px;
+    padding: 10px 2rem 20px 2rem;
     border: 1px solid green;
 }
 #progress-bar{
@@ -48,4 +64,56 @@ h1{
     text-align: center;
     padding: 10px 0;
     font-weight: 600;
+}
+
+.product-cart{
+    margin-top: 40px;
+    max-height: 58vh;
+    overflow: scroll;
+    border-top: 1px solid#1e1e1e;
+    border-bottom: 1px solid#1e1e1e;
+}
+
+.cart::-webkit-scrollbar, .product-cart::-webkit-scrollbar{
+    background: transparent;
+    width: 1px;
+}
+
+.cart::-webkit-scrollbar-thumb, .product-cart::-webkit-scrollbar-thumb {
+    background: #1e1e1e;  
+    border-radius: 10px;  
+}
+
+.signCart{
+    margin-top: 20px;
+    font-family: "Nunito", sans-serif;
+
+
+}
+.total-cart-value{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.item-count{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.subtotal-text{
+    font-size: 20px;
+    font-weight: 900;
+}
+.checkout-button{
+    margin-top: 20px;
+    font-family: "Nunito", sans-serif;
+    width: 100%;
+}
+.hover-effect{
+    padding: 5px;
+
+}
+.hover-effect:hover{
+    background-color: #e0dbcf;
 }
