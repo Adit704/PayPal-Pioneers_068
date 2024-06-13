@@ -3,7 +3,8 @@ import {Header} from './components/Header.jsx'
 import {HeroCarausal} from './components/HeroCarausal.jsx'
 import { useDispatch } from 'react-redux';
 import { fetchCategory } from './redux/Actions/fetchProducts.js';
-import { Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import { ProductPage } from './components/ProductPage';
 import { HomePageDashBoard } from './components/HomePageDashBoard.jsx';
 
 function App() {
@@ -16,8 +17,9 @@ function App() {
     <HomePageDashBoard/>
 
     <Routes>
+        {/* <Route path="/productpage" element={<ProductPage />} /> */}
     </Routes>
-
+   
     </>
   )
 }
