@@ -1,6 +1,8 @@
 import {} from "react";
 import "../styles/header.css";
 import wineBottle from "../images/winebottle.png";
+import { Cart } from "./Cart";
+import { useCartDisplay } from "../hooks/cartDisplayHook";
 // import { useDispatch } from "react-redux";
 
 
@@ -10,6 +12,7 @@ export const Header = () => {
   // const handleSearchBar = (e) => {
   //   dispatch({ type: SEARCHBAR, payload: e.target.value });
   // };
+  const [visible, cartToggle] = useCartDisplay();
 
   return (
     <>
@@ -34,9 +37,10 @@ export const Header = () => {
           <div className="landing_page_header_icons">
             <button className="landing_page_header_login">Log in </button>
             <button className="landing_page_header_signup">Sign Up</button>
-            <button className="landing_page_header_cart">cart</button>
+            <button onClick={cartToggle} className="landing_page_header_cart">cart</button>
           </div>
         </div>
+        <Cart visible={visible} cartToggle={cartToggle}/>
       </header>
 <hr />
 

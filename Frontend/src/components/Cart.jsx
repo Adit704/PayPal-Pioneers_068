@@ -1,40 +1,128 @@
 import { useEffect, useMemo, useState } from "react"
 import '../styles/Cart.css'
 import { CartCard } from "./CartCard"
-import { useDispatch } from "react-redux"
-import { fetchCategory } from "../redux/Actions/fetchProducts"
-export function Cart(){
+import { useSelector } from "react-redux"
+import { Button, Switch } from "@chakra-ui/react"
+export function Cart({visible, cartToggle}){
     
-    const [totalAmount, setTotalAmount] = useState(1000)
-    const dispatch = useDispatch();
-    useEffect(()=>{
-        localStorage.setItem("wineCart", JSON.stringify({"1":1,"2":1,"10":1,"15":1,"20":1}))
-    },[])
+    const [totalAmount, setTotalAmount] = useState(0)
+    const [newTotalAmount, setNewTotalAmount] = useState(0)
+    const [toggleRender, setToggleRender ] = useState(false);
+    // console.log(visible);
+
+    let product = useSelector(state => state.products)
+    // useEffect(()=>{
+    //     localStorage.setItem("wineCart", JSON.stringify({"1":1,"2":1,"10":1,"15":1,"20":1}))
+    // },[])
+    // console.log(product);
     const cart = useMemo(()=>{
-        return JSON.parse(localStorage.getItem("wineCart"))
-    },[])
+        console.log("hello");
+        setTotalAmount(0);
+        setNewTotalAmount(0);
+        let cardDetails = JSON.parse(localStorage.getItem("wineCart"));
+        return product.data.filter((elem)=>{
+            if(Object.keys(cardDetails).includes(elem.id)) return true;
+            else false;
+        }).map((elem)=>{ 
+            setTotalAmount((prev) => {
+                return prev+Number(elem.Price)*Number(cardDetails[elem.id])
+            })
+            setNewTotalAmount((prev) => {
+                return prev+Number(elem.newPrice)*Number(cardDetails[elem.id])
+            })
+            return {...elem, quantity:Number(cardDetails[elem.id])}})
+    },[product.status, toggleRender])
+
+    function deleteCartItem(id){
+       
+        let cardDetails = JSON.parse(localStorage.getItem("wineCart"));
+        let newCardDetails = Object.keys(cardDetails).reduce((acc, key)=>{
+            if(key != id){
+                acc[key] = cardDetails[key];
+            }
+            return acc;
+            },{})
+        localStorage.setItem("wineCart",JSON.stringify(newCardDetails));
+        setToggleRender(prev => !prev);
+    }
+
+    function decreaseQuantity(id){
+        let cardDetails = JSON.parse(localStorage.getItem("wineCart"));
+        let newCardDetails = Object.keys(cardDetails).reduce((acc, key)=>{
+            if(key == id && cardDetails[key] > 1){
+                acc[key] = cardDetails[key]-1;
+            }
+            else{
+                acc[key] = cardDetails[key];
+            }
+            return acc;
+            },{})
+        localStorage.setItem("wineCart",JSON.stringify(newCardDetails));
+        setToggleRender(prev => !prev);
+    }
+    function increaseQuantity(id){
+        let cardDetails = JSON.parse(localStorage.getItem("wineCart"));
+        let newCardDetails = Object.keys(cardDetails).reduce((acc, key)=>{
+            if(key == id){
+                acc[key] = cardDetails[key]+1;
+            }
+            else{
+                acc[key] = cardDetails[key];
+            }
+            return acc;
+            },{})
+        localStorage.setItem("wineCart",JSON.stringify(newCardDetails));
+        setToggleRender(prev => !prev);
+    }
     return (
-    <div className="cart">
-        <h1>Shopping cart</h1>
+    <div className="cart" style={{display:visible}}>
+        <div style={{display:"flex", justifyContent:"flex-end", alignItems:"flex-start", width:"100%"}}>
+        <h1 className="cart-title">Shopping cart</h1>
+        <div ><i onClick={cartToggle} style={{fontSize:"20px", color:"gray"}} className="fa-solid hover-effect fa-xmark"></i></div>
+        </div>
         <div className="progressBar">
             {totalAmount>=1000 && <p>You're getting free shipping!</p>}
-            {totalAmount<1000 && <p>Add item worth <b>{1000-totalAmount}</b> more to get free shipping!</p>}
+            {totalAmount<1000 && <p>Add item worth <b>{1000-newTotalAmount}</b> more to get free shipping!</p>}
             <div  className="progress-bar-section">
             <span>0$</span>
-            <progress id="progress-bar" max="1000" value={totalAmount}></progress>
+            <progress id="progress-bar" max="1000" value={newTotalAmount}></progress>
             <span>1000$</span>
             </div>
         </div>
-        <div className="points-extra-info">
-            Earn <b>{Math.round(totalAmount*.1)}</b> points on this purchase!
-        </div>
-        <div className="product-cart">
+        {Math.round(newTotalAmount*.1) > 0 && <div className="points-extra-info">
+            Earn <b>{Math.round(newTotalAmount*.1)}</b> points on this purchase!
+        </div>}
+        {product.status == "inprogress" && <div style={{textAlign:"center", color:"gray", marginTop:"100px"}}>Loading.....</div> }
+        <div className="product-cart" >
             {cart && cart.map((elem)=>{
-                // return <CartCard/>
-                return <div>{elem}</div>
+                return <CartCard increaseQuantity = {increaseQuantity} decreaseQuantity={decreaseQuantity} deleteCartItem={deleteCartItem} key={elem.id} id={elem.id} imgSrc={elem.img} title={elem.title} prevAmount={elem.Price} amount={elem.newPrice} quantity={elem.quantity}/>
             })}
             {!cart && <div style={{color:"gray", textAlign:"center", padding:"100px 0"}}>You don't have any thing in you cart!</div> }
         </div>
+
+        <div className="signCart">
+            <label>I am 18+</label>
+            <div style={{display:"flex", gap:"20px", marginTop:"10px"}} >
+                <Switch colorScheme="red"/>
+                <div style={{color:"gray", fontSize:"14px"}}>An adult signature (18+) is required for delivery</div>
+            </div>
+        </div>
+        <div className="total-cart-value">
+            <div className="item-count">
+                <div className="subtotal-text">Subtotal</div>
+                <div style={{fontSize:"12px"}} >({cart.length} items)</div>
+            </div>
+            <div>
+                <div style={{display:"flex",gap:"10px"}}>
+                    <div><sup style={{color:"gray", textDecoration:"line-through"}}>{totalAmount}$</sup></div>
+                    <div>{newTotalAmount}$</div>
+                </div>
+                <div style={{color:"green", fontSize:"14px"}}>You saved {Math.abs(totalAmount-newTotalAmount)}$</div>
+            </div>
+        </div>
+            
+        <Button colorScheme="red" className="checkout-button" >Checkout</Button>
+            
     </div>
     )
 }
