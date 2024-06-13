@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.landing_page_slider_parent {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+#landing_page_slider {
+  display: flex;
+  gap: 5vw;
+  animation: slider 10s linear infinite;
+  width: calc(200% + 55vw);
+}
+
+@keyframes slider {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.landing_page_slider_children {
+  flex: 0 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+

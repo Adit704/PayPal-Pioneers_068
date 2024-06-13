@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#landing_page_navbar {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  gap: 2vw;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 2vh;
+}
+
+.landing_page_navbar_children {
+  font-size: 1.3rem;
+  box-shadow: 2px 5px 20px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 1vh 2vw;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.landing_page_navbar_children:hover {
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+

@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#landing_page_what_would_you_like, #landing_page_set_and_gifts {
+  width: 80%;
+  margin: 7vh auto;
+}
+
+.what_would_you_like_title, .set_and_gifts_title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.what_would_you_like_cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  margin-top: 4vh;
+  gap: 3vw;
+}
+
+.what_would_you_like_cards_children {
+  border-radius: 10px;
+  box-shadow: 2px 5px 6px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.what_would_you_like_cards_img, .set_and_gifts_cards_img {
+  width: 100%;
+  height: 100%;
+}
+
+.what_would_you_like_cards_title {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding-bottom: 2vh;
+}
+
+.what_would_you_like_cards_children:hover {
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+
+@media (max-width: 1200px) {
+  .what_would_you_like_title {
+    font-size: 1.8rem;
+  }
+
+  .what_would_you_like_cards {
+    gap: 2vw;
+  }
+
+  .what_would_you_like_cards_title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .what_would_you_like_cards_children {
+    width: 80%;
+  }
+
+  .what_would_you_like_title{
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .what_would_you_like_cards {
+    align-items: center;
+    gap: 2vh;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .what_would_you_like_cards_title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .what_would_you_like_title {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .what_would_you_like_cards {
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    gap: 1vh;
+  }
+
+  .what_would_you_like_cards_children {
+    width: 60%;
+   margin: 3vh 0;
+  }
+
+  .what_would_you_like_cards_title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .what_would_you_like_title {
+    font-size: 1.2rem;
+    text-align: center;
+   
+  }
+
+  .what_would_you_like_cards_children {
+    width: 100%;
+  }
+
+  .what_would_you_like_cards_title {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* --------------- Set's and Gifts------------- */ 
+
+.set_and_gifts_cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  margin-top: 4vh;
+  gap: 3vw;
+}
+
+.set_and_gifts_cards_img_parent{
+  height: 80%;
+}
+
+.set_and_gifts_cards_img{
+ border-radius: 10px;
+}
+
+.set_and_gifts_cards_title{
+  margin: 2vh 0 0 1vw;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+@media (max-width: 992px){
+  .set_and_gifts_cards {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1vh;
+  }
+
+  .set_and_gifts_cards_children {
+    width: 80%;
+  }
+
+  .set_and_gifts_cards_title{
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px){
+  .set_and_gifts_cards {
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    gap: 1vh;
+  }
+
+  .set_and_gifts_cards_children {
+    width: 60%;
+  }
+
+  .set_and_gifts_cards_title{
+    font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 576px){
+  .set_and_gifts_cards {
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    gap: 1vh;
+  }
+
+  .set_and_gifts_cards_children {
+    width: 90%;
+  }
+
+  .set_and_gifts_cards_title{
+    font-size: 1rem;
+  }
+
+}
+
+
+

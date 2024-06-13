@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+
+#landing_page_dashboard {
+  font-family: "PT Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #fff8e9;
+}
