@@ -7,6 +7,10 @@ import { Routes, Route } from 'react-router-dom';
 import { ProductPage } from './components/ProductPage';
 import { HomePageDashBoard } from './components/HomePageDashBoard.jsx';
 
+// import { DashBoard } from "./components/dashboard/DashBoard"
+
+
+
 function App() {
   const dispatch = useDispatch()
   useEffect(()=>{
@@ -19,8 +23,12 @@ function App() {
     <Routes>
         {/* <Route path="/productpage" element={<ProductPage />} /> */}
     </Routes>
+
+
+    {/* <DashBoard/> */}
    
     </>
+main
   )
 }
 
