@@ -4,6 +4,7 @@ import {HeroCarausal} from './components/HeroCarausal.jsx'
 import { useDispatch } from 'react-redux';
 import { fetchCategory } from './redux/Actions/fetchProducts.js';
 import { Routes } from 'react-router-dom';
+import { HomePageDashBoard } from './components/HomePageDashBoard.jsx';
 
 function App() {
   const dispatch = useDispatch()
@@ -12,8 +13,8 @@ function App() {
     },[])
   return (
     <>
-    <Header/>
-    <HeroCarausal/>
+    <HomePageDashBoard/>
+
     <Routes>
     </Routes>
 
