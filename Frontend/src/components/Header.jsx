@@ -1,15 +1,19 @@
 import {} from "react";
 import "../styles/header.css";
 import wineBottle from "../images/winebottle.png";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import { SEARCHBAR } from "../redux/actionTypes";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faCartShopping, faBookmark, faUser} from "@fortawesome/free-solid-svg-icons"
+
 
 
 export const Header = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // const handleSearchBar = (e) => {
-  //   dispatch({ type: SEARCHBAR, payload: e.target.value });
-  // };
+  const handleSearchBar = (e) => {
+    dispatch({ type: SEARCHBAR, payload: e.target.value });
+  };
 
   return (
     <>
@@ -27,18 +31,17 @@ export const Header = () => {
               className="landing_page_header_search"
               placeholder="Search your wine...."
               type="text"
-              // onChange={(e) => handleSearchBar(e)}
+              onChange={(e) => handleSearchBar(e)}
             />
             <button className="landing_page_header_search_btn">Search</button>
           </div>
           <div className="landing_page_header_icons">
-            <button className="landing_page_header_login">Log in </button>
-            <button className="landing_page_header_signup">Sign Up</button>
-            <button className="landing_page_header_cart">cart</button>
+            <p className="landing_page_header_login"><FontAwesomeIcon className="landing_page_header_icons_children" icon={faUser} /></p>
+            <p className="landing_page_header_fav"><FontAwesomeIcon   className="landing_page_header_icons_children" icon={faBookmark} /></p>
+            <p className="landing_page_header_cart"><FontAwesomeIcon  className="landing_page_header_icons_children" icon={faCartShopping} /></p>
           </div>
         </div>
       </header>
-<hr />
 
     </>
   );
