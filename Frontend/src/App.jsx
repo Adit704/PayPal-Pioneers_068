@@ -5,6 +5,8 @@ import { useDispatch } from 'react-redux';
 import { fetchCategory } from './redux/Actions/fetchProducts.js';
 import { Routes, Route } from 'react-router-dom';
 import { ProductPage } from './components/ProductPage';
+import { WishList } from './components/WishList.jsx';
+import { ProductCard } from './components/ProductCard.jsx';
 
 function App() {
   const dispatch = useDispatch()
@@ -18,7 +20,7 @@ function App() {
     <Routes>
         <Route path="/productpage" element={<ProductPage />} />
     </Routes> */}
-    <ProductPage />
+     <ProductCard />
     </>
   )
 }
