@@ -8,8 +8,7 @@ import { ProductPage } from './components/ProductPage';
 import { HomePageDashBoard } from './components/HomePageDashBoard.jsx';
 import { Checkout } from './components/Checkout.jsx';
 // import { DashBoard } from "./components/dashboard/DashBoard"
-
-
+import { Product } from "./components/dashboard/Product"
 import { WishList } from './components/WishList.jsx';
 import { ProductCard } from './components/ProductCard.jsx';
 
@@ -20,18 +19,12 @@ function App() {
     },[])
   return (
     <>
-   
-
     <Routes>
-      <Route path="/" element={ <HomePageDashBoard/>} />
-      <Route path="/checkout" element={<Checkout/>}/>
-        {/* <Route path="/productpage" element={<ProductPage />} /> */}
+        <Route path='/' element={<HomePageDashBoard />} />
+        <Route path ='/checkout' element={<Checkout/>}/>
+        <Route path="/productpage" element={<ProductPage />} />
+        <Route path='/wishlist' element={<WishList />} />
     </Routes>
-
-
-    {/* <DashBoard/> */}
-    {/* <WishList /> */}
-   
     </>
   )
 }

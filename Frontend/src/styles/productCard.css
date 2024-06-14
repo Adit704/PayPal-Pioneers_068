@@ -2,12 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=PT+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Overpass:ital,wght@0,100..900;1,100..900&family=PT+Mono&display=swap');
+
 .product-card-container {
   border: 2px solid rgb(143, 142, 142);
-  background-color: #FFF8E9;
   padding: 20px;
-  width: 100%;
+  width: 200px;
+  height: auto;
   box-sizing: border-box;
+}
+.card-main-section {
+  height: 100%;
 }
 
 .product-top-section {
@@ -19,42 +23,58 @@
 .product-rating {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
 }
 
 .product-code {
   color: rgb(139, 137, 137);
   margin-top: 7px;
+  font-size: 0.875rem; 
 }
 
 .product-icon {
   margin-right: 10px;
+  display: flex;
+  gap: 10px;
+
 }
 
 .legal-icon {
   color: rgb(53, 53, 53);
+  font-size: 1rem; 
+
 }
 
 .heart-icon {
   color: rgb(53, 53, 53);
+  font-size: 1rem;
+}
+.product-image-container{
+  height: auto;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .product-image {
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 30vh;
 }
 
 .product-desc {
   margin-top: 20px;
   margin-bottom: 10px;
   font-family: "PT Mono", monospace;
+  font-size: 1rem; 
 }
 
 .product-country {
   display: flex;
   align-items: center;
-  gap: 25px;
+  justify-content: space-between;
   font-family: "Montserrat", sans-serif;
   color: rgb(96, 96, 96);
+  font-size: 1rem;
 }
 
 .product-border {
@@ -74,6 +94,7 @@
 .product-price-1 {
   font-family: monospace;
   font-weight: 900;
+  font-size: 1rem;
 }
 
 .product-cart-button {
@@ -82,6 +103,7 @@
   color: white;
   background-color: #BF0D12;
   border-radius: 7px;
+  font-size: 1rem;
 }
 
 @media (min-width: 600px) {
@@ -90,28 +112,28 @@
   }
 
   .product-rating {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   .product-code {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   .product-desc {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .legal-icon,
   .heart-icon {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .product-price-1 {
-    font-size: 18px;
+    font-size: 1.125rem; 
   }
 
   .product-cart-button {
-    font-size: 16px;
+    font-size: 1rem;
     padding: 8px 12px;
   }
 }
@@ -122,28 +144,28 @@
   }
 
   .product-rating {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .product-code {
-    font-size: 14px;
+    font-size: 0.875rem; 
   }
 
   .product-desc {
-    font-size: 18px;
+    font-size: 1.125rem; 
   }
 
   .legal-icon,
   .heart-icon {
-    font-size: 18px;
+    font-size: 1.125rem; 
   }
 
   .product-price-1 {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 
   .product-cart-button {
-    font-size: 18px;
+    font-size: 1.125rem; 
     padding: 10px 15px;
   }
 }
@@ -154,28 +176,28 @@
   }
 
   .product-rating {
-    font-size: 18px;
+    font-size: 1.125rem; 
   }
 
   .product-code {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .product-desc {
-    font-size: 20px;
+    font-size: 1.25rem; 
   }
 
   .legal-icon,
   .heart-icon {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 
   .product-price-1 {
-    font-size: 22px;
+    font-size: 1.375rem; 
   }
 
   .product-cart-button {
-    font-size: 20px;
+    font-size: 1.25rem;
     padding: 12px 18px;
   }
 }
