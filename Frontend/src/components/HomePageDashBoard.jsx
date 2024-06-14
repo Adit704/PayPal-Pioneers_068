@@ -1,11 +1,15 @@
 import {} from "react";
 import { Header } from "./Header";
+import { Navbar } from "./Navbar";
 import { HeroCarausal } from "./HeroCarausal";
 import { LandingPageCards } from "./LandingPageCards";
 import { Slider } from "./Slider";
 import { SetAndGifts } from "./SetAndGifts";
 import '../styles/homepagedashboard.css';
-import { Navbar } from "./Navbar";
+import { WineSubscription } from "./WineSubscription";
+import { BlogAndNews } from "./BlogAndNews";
+import { WeAreOnInstagram } from "./WeAreOnInstagram";
+import { Footer } from "./Footer";
 
 export const HomePageDashBoard = () => {
   return (
@@ -17,6 +21,10 @@ export const HomePageDashBoard = () => {
         <LandingPageCards />
         <Slider />
         <SetAndGifts />
+        <WineSubscription/>
+        <BlogAndNews/>
+        <WeAreOnInstagram/>
+        <Footer/>
       </div>
     </>
   );

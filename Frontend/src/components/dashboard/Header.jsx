@@ -11,28 +11,29 @@ export const Header = ({ OpenSidebar, onSearch }) => {
   };
 
   return (
-    <header className='header'>
+    <header className='header' style={{ backgroundColor: '#1d2634', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft:"13%", boxShadow: '0 6px 7px -3px rgba(0, 0, 0, 0.35)', height: '60px' }}>
       <div className='menu-icon'>
-        <BsJustify className='icon' onClick={OpenSidebar} />
+        <BsJustify className='icon' onClick={OpenSidebar} style={{ fontSize: '20px', cursor: 'pointer' }} />
       </div>
       <div className='header-left'>
-        <form onSubmit={(e) => e.preventDefault()}>
-          <input 
-            type='text' 
-            value={searchQuery} 
-            onChange={handleSearchChange} 
-            placeholder='Search...' 
+        <form onSubmit={(e) => e.preventDefault()} style={{ display: 'flex', alignItems: 'center' }}>
+          <input
+            type='text'
+            value={searchQuery}
+            onChange={handleSearchChange}
+            placeholder='Search...'
             className='search-input'
+            style={{ padding: '8px', marginRight: '10px', border: '1px solid #ccc', borderRadius: '5px', fontSize: '16px', color: '#333', backgroundColor: '#fff' }}
           />
-          <button type='submit' className='search-button' style={{ color:"white"}}>
-            <BsSearch className='icon'/>
+          <button type='submit' className='search-button' style={{ padding: '8px 12px', border: 'none', backgroundColor: '#2962ff', color: '#fff', borderRadius: '5px', cursor: 'pointer' }}>
+            <BsSearch className='icon' style={{ fontSize: '20px' }} />
           </button>
         </form>
       </div>
-      <div className='header-right' style={{display:"flex",justifyContent:"center",alignItems:"center", gap:"20px", color:"white"}}>
-        <BsFillBellFill className='icon' />
-        <BsFillEnvelopeFill className='icon' />
-        <BsPersonCircle className='icon' />
+      <div className='header-right' style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+        <BsFillBellFill className='icon' style={{ fontSize: '24px', cursor: 'pointer' }} />
+        <BsFillEnvelopeFill className='icon' style={{ fontSize: '24px', cursor: 'pointer' }} />
+        <BsPersonCircle className='icon' style={{ fontSize: '24px', cursor: 'pointer' }} />
       </div>
     </header>
   );

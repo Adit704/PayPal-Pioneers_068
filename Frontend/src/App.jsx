@@ -7,6 +7,10 @@ import { Routes, Route } from 'react-router-dom';
 import { ProductPage } from './components/ProductPage';
 import { HomePageDashBoard } from './components/HomePageDashBoard.jsx';
 
+import { Product } from "./components/dashboard/Product"
+
+import { Product } from "./components/dashboard/Product"
+
 
 
 

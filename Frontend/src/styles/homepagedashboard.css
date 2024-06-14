@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
 #landing_page_dashboard {
   font-family: "PT Mono", monospace;

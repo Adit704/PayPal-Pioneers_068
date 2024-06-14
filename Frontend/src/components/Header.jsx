@@ -2,10 +2,11 @@ import {} from "react";
 import "../styles/header.css";
 import wineBottle from "../images/winebottle.png";
 import { useDispatch } from "react-redux";
+import { SEARCHBAR } from "../redux/actionTypes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faCartShopping, faBookmark, faUser} from "@fortawesome/free-solid-svg-icons"
-import { Cart } from "./Cart";
-import { useCartDisplay } from "../hooks/cartDisplayHook";
+
+
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ export const Header = () => {
   const handleSearchBar = (e) => {
     dispatch({ type: SEARCHBAR, payload: e.target.value });
   };
-  const [visible, cartToggle] = useCartDisplay();
+
   return (
     <>
       <header id="landing_page_header">
@@ -37,11 +38,9 @@ export const Header = () => {
           <div className="landing_page_header_icons">
             <p className="landing_page_header_login"><FontAwesomeIcon className="landing_page_header_icons_children" icon={faUser} /></p>
             <p className="landing_page_header_fav"><FontAwesomeIcon   className="landing_page_header_icons_children" icon={faBookmark} /></p>
-            <p onClick={cartToggle} className="landing_page_header_cart"><FontAwesomeIcon  className="landing_page_header_icons_children" icon={faCartShopping} /></p>
+            <p className="landing_page_header_cart"><FontAwesomeIcon  className="landing_page_header_icons_children" icon={faCartShopping} /></p>
           </div>
-
         </div>
-        <Cart visible={visible} cartToggle={cartToggle}/>
       </header>
 
     </>

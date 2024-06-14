@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#landing_page_blog_and_news_container{
+    width: 80%;
+    margin: 10vh auto;
+}
+
+.landing_page_blog_and_news_title{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 3vh;
+}
+
+#landing_page_blog_and_news{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2vw;
+}
+
+
+.landing_page_blog_and_news_img_parent_3{
+    height: 80%;
+}
+
+.landing_page_blog_and_news_img_parent_5{
+    height: 100%;
+    grid-column: span 2;
+}
+
+.large_card{
+    grid-area: 2 / 1 / 3 / 3;
+}
+
+.landing_page_blog_and_news_img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
