@@ -81,14 +81,109 @@
 .landing_page_header_login:active,
 .landing_page_header_fav:active {
   color: rgb(141, 141, 215);
-  
 }
 
 .landing_page_header_icons_children {
   font-size: 1.5rem;
 }
 
-.landing_page_header_search_btn:active{
+.landing_page_header_search_btn:active {
   background-color: rgb(141, 141, 215);
-  color: white; 
+  color: white;
+}
+
+
+@media screen and (max-width: 368px) {
+  #landing_page_header {
+    grid-template-columns: 1fr;
+    height: auto;
+    position: relative;
+  }
+
+  .landing_page_header_logo_parent {
+    width: 40%;
+    margin-top: 2vh;
+  }
+
+  .landing_page_header_icons {
+    position: absolute;
+    top: 1vh;
+    left: 26vh;
+    font-size: 1.1rem;
+  }
+
+  .landing_page_header_login,
+  .landing_page_header_fav,
+  .landing_page_header_cart {
+    margin: 0 2vw;
+  }
+
+  .landing_page_header_search {
+    position: absolute;
+    transform: translate(5vh, 0);
+    height: 5vh;
+    font-size: 1.1rem;
+    width: 60vw;
+  }
+
+  .landing_page_header_search_btn {
+    font-size: 1.1rem;
+    position: absolute;
+    right: 11vw;
+    width: 20vw;
+    height: 5vh;
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  #landing_page_header {
+    grid-template-columns: 1fr; 
+    height: auto;
+    padding: 1vh 2vw;
+  }
+
+  .landing_page_header_logo_parent {
+    width: 40%;
+    margin-top: 1vh;
+    height: auto;
+  }
+
+  .landing_page_header_search_parent_parent {
+    grid-template-columns: 1fr; 
+    margin: 1vh 2vw;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .landing_page_header_search {
+    width: 70%;
+    font-size: 1.1rem;
+    padding-left: 2vw;
+  }
+
+  .landing_page_header_search_btn {
+    width: 25%;
+    font-size: 1.1rem;
+    margin-top: 0;
+  }
+
+  .landing_page_header_icons {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    margin: 2vh 0;
+  }
+
+  .landing_page_header_login,
+  .landing_page_header_fav,
+  .landing_page_header_cart {
+    font-size: 1.8rem;
+  }
+
+  .landing_page_header_icons_children {
+    font-size: 1.3rem;
+  }
 }
