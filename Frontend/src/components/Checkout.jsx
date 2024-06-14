@@ -16,7 +16,7 @@ export function Checkout(){
         // console.log("hello");
         setTotalAmount(0);
         setNewTotalAmount(0);
-        let cardDetails = JSON.parse(localStorage.getItem("wineCart"));
+        let cardDetails = JSON.parse(localStorage.getItem("wineCart")) || {};
         return product.data.filter((elem)=>{
             if(Object.keys(cardDetails).includes(String(elem.id))) return true;
             else false;

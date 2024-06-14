@@ -4,7 +4,6 @@ import { CartCard } from "./CartCard"
 import { useSelector } from "react-redux"
 import { Button, Switch } from "@chakra-ui/react"
 import { ProductCard } from "./ProductCard"
-import { color } from "framer-motion"
 export function Cart({visible, cartToggle}){
     
     const [totalAmount, setTotalAmount] = useState(0)
