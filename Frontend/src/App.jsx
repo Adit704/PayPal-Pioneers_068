@@ -6,7 +6,7 @@ import { fetchCategory } from './redux/Actions/fetchProducts.js';
 import { Routes, Route } from 'react-router-dom';
 import { ProductPage } from './components/ProductPage';
 import { HomePageDashBoard } from './components/HomePageDashBoard.jsx';
-
+import { Checkout } from './components/Checkout.jsx';
 // import { DashBoard } from "./components/dashboard/DashBoard"
 
 
@@ -20,15 +20,17 @@ function App() {
     },[])
   return (
     <>
-    {/* <HomePageDashBoard/> */}
+   
 
     <Routes>
+      <Route path="/" element={ <HomePageDashBoard/>} />
+      <Route path="/checkout" element={<Checkout/>}/>
         {/* <Route path="/productpage" element={<ProductPage />} /> */}
     </Routes>
 
 
     {/* <DashBoard/> */}
-    <WishList />
+    {/* <WishList /> */}
    
     </>
   )

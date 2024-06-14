@@ -2,6 +2,7 @@
 
 
 .cart{
+    font-family: "PT Mono", monospace;;
     font-weight: bold;
     color: #1e1e1e;
     position: fixed;
@@ -23,6 +24,7 @@
 @media (max-width:800px) {
     .cart{
         width: 100%;
+        height: 100%;
 
     }
 }
@@ -126,8 +128,13 @@
 .recommend-cards{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    /* gap: 5px; */
+    
+    
 }
 .recommend-cards>div{
-    width: 200px;
-    /* height: 400px; */
+    width: 250px;
+    /* margin-bottom: 5px; */
+    
 }

@@ -1,0 +1,15 @@
+.your-cart{
+    font-family: "PT Mono", monospace;;
+    font-weight: bold;
+    color: #1e1e1e;
+ 
+    /* max-width: 800px; */
+    width: 600px;
+    min-width: 400px;
+    margin: auto;
+    border: 1px solid;
+    padding: 10px 3rem;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: scroll;
+}

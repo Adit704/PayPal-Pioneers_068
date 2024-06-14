@@ -4,6 +4,7 @@ import { CartCard } from "./CartCard"
 import { useSelector } from "react-redux"
 import { Button, Switch } from "@chakra-ui/react"
 import { ProductCard } from "./ProductCard"
+import { color } from "framer-motion"
 export function Cart({visible, cartToggle}){
     
     const [totalAmount, setTotalAmount] = useState(0)
@@ -20,7 +21,7 @@ export function Cart({visible, cartToggle}){
         // console.log("hello");
         setTotalAmount(0);
         setNewTotalAmount(0);
-        let cardDetails = JSON.parse(localStorage.getItem("wineCart"));
+        let cardDetails = JSON.parse(localStorage.getItem("wineCart")) || {};
         return product.data.filter((elem)=>{
             if(Object.keys(cardDetails).includes(String(elem.id))) return true;
             else false;
@@ -126,10 +127,10 @@ export function Cart({visible, cartToggle}){
         {product.status == "success" && <div>
             <div className="mayLike-text">You may like</div>
             <div className="recommend-cards">
-                <ProductCard  image={product.data[0].img} price={product.data[0].Price} title={product.data[0].title} id={product.data[0].id}/>
-                <ProductCard  image={product.data[1].img} price={product.data[1].Price} title={product.data[1].title} id={product.data[1].id}/>
-                <ProductCard  image={product.data[2].img} price={product.data[2].Price} title={product.data[2].title} id={product.data[2].id}/>
-                <ProductCard  image={product.data[3].img} price={product.data[3].Price} title={product.data[3].title} id={product.data[3].id}/>
+                <ProductCard  image={product.data[0].img} price={product.data[0].Price} title={product.data[0].title} id={product.data[0].id} country={product.data[0].country} color={product.data[0].color} type={product.data[0].type} item={product.data[0]} />
+                <ProductCard  image={product.data[1].img} price={product.data[1].Price} title={product.data[1].title} id={product.data[1].id} country={product.data[1].country} color={product.data[1].color} type={product.data[1].type} item={product.data[1]}/>
+                <ProductCard  image={product.data[2].img} price={product.data[2].Price} title={product.data[2].title} id={product.data[2].id} country={product.data[2].country} color={product.data[2].color} type={product.data[2].type} item={product.data[2]}/>
+                <ProductCard  image={product.data[3].img} price={product.data[3].Price} title={product.data[3].title} id={product.data[3].id} country={product.data[3].country} color={product.data[3].color} type={product.data[3].type} item={product.data[3]}/>
             </div>
 
         </div>}

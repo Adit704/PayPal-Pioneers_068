@@ -9,8 +9,6 @@ export const ProductCard = ({image, price, title, id,country, color, type, item}
         dispatch({type: "DATA_FROM_PRODUCT_CARD", payload : item})
     }
 
-
-
   return (
     <div className='product-card-container'>
         <div className='product-top-section'>
