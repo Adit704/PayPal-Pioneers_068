@@ -9,9 +9,13 @@ import { HomePageDashBoard } from './components/HomePageDashBoard.jsx';
 
 import { Product } from "./components/dashboard/Product"
 
-// import { DashBoard } from "./components/dashboard/DashBoard"
+import { Product } from "./components/dashboard/Product"
 
 
+
+
+import { WishList } from './components/WishList.jsx';
+import { ProductCard } from './components/ProductCard.jsx';
 
 function App() {
   const dispatch = useDispatch()
@@ -20,16 +24,11 @@ function App() {
     },[])
   return (
     <>
-    <HomePageDashBoard/>
-
     <Routes>
+        <Route path='/' element={<HomePageDashBoard />} />
         <Route path="/productpage" element={<ProductPage />} />
+        <Route path='/wishlist' element={<WishList />} />
     </Routes>
-
-
-    <DashBoard/>
-    
-   
     </>
   )
 }
