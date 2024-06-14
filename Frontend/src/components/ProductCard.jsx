@@ -2,30 +2,31 @@ import React from 'react'
 import '../styles/productCard.css'
 import { useDispatch } from 'react-redux';
 
-export const ProductCard = ({image, price, title, id,country, color, type, item}) => {
+export const ProductCard = ({item}) => {
     const dispatch = useDispatch();
+
 
     const handleAdd = () => {
         dispatch({type: "DATA_FROM_PRODUCT_CARD", payload : item})
     }
 
+    const {img : image, newPrice : price, title, id,country, rating, color, type} = item;
 
 
   return (
     <div className='product-card-container'>
         <div className='product-top-section'>
             <div>
-                <p className='product-rating'><i class="fa-solid fa-star"></i>4.7</p>
-                <p className='product-code'>Product code : 3547</p>
+                <p className='product-rating'><i className="fa-solid fa-star"></i> {rating}</p>
+                <p className='product-code'>Product code : {id}</p>
             </div>
             <div className='product-icon'>
-                <span><i class="fas fa-balance-scale legal-icon"></i></span>
+                <span><i className="fas fa-balance-scale legal-icon"></i></span>
                 <span onClick={handleAdd}><i className="fa-regular fa-heart heart-icon"></i></span>
             </div>
         </div>
         <div onClick={() => {localStorage.setItem("currentCard", id)
-            
-        }}>
+        }}  className="card-main-section">
 
         <div className='product-image-container'>
             <img src={image} alt="wine bottle" style= {{mixBlendMode:"multiply"}} className='product-image' />
@@ -42,7 +43,7 @@ export const ProductCard = ({image, price, title, id,country, color, type, item}
         <div className='product-border'></div>
         <div className='product-price'>
             <span className='product-price-1'>{price}$</span>
-            <span className='product-cart-button'><i class="fa-solid fa-plus"></i></span>
+            <span className='product-cart-button'>&#43;</span>
         </div>
     </div>
   )

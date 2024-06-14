@@ -7,7 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 import { ProductPage } from './components/ProductPage';
 import { HomePageDashBoard } from './components/HomePageDashBoard.jsx';
 
-// import { DashBoard } from "./components/dashboard/DashBoard"
+
 
 
 import { WishList } from './components/WishList.jsx';
@@ -20,16 +20,11 @@ function App() {
     },[])
   return (
     <>
-    {/* <HomePageDashBoard/> */}
-
     <Routes>
-        {/* <Route path="/productpage" element={<ProductPage />} /> */}
+        <Route path='/' element={<HomePageDashBoard />} />
+        <Route path="/productpage" element={<ProductPage />} />
+        <Route path='/wishlist' element={<WishList />} />
     </Routes>
-
-
-    {/* <DashBoard/> */}
-    <WishList />
-   
     </>
   )
 }

@@ -49,7 +49,7 @@ export const ProductPage = () => {
                     <div className='product-body-right-top-content'>
                         <div className='productpage-rating'>
                         <p className='product-rating-icon'>
-                        <span><i class="fa-solid fa-star"></i>
+                        <span><i className="fa-solid fa-star"></i>
                         <i className="fa-solid fa-star"></i>
                         <i className="fa-solid fa-star"></i>
                         <i className="fa-solid fa-star"></i>
@@ -64,7 +64,7 @@ export const ProductPage = () => {
                         </div>
                         </div>
                        <div className='productpage-favicon'>
-                       <span><i class="fas fa-balance-scale legal-icon"></i></span>
+                       <span><i className="fas fa-balance-scale legal-icon"></i></span>
                         <span onClick={handleAdd}><i className="fa-regular fa-heart heart-icon"></i></span>
                        </div>
                     </div>
@@ -118,7 +118,7 @@ export const ProductPage = () => {
                     <div className='productpage-bootom-container'>
                         <span>
                             <p>
-                                <i class="fa-solid fa-truck"></i>
+                                <i className="fa-solid fa-truck"></i>
                             </p>
                             <p>
                                 Free Delivery
@@ -127,7 +127,7 @@ export const ProductPage = () => {
                         </span>
                         <span>
                             <p>
-                            <i class="fa-solid fa-coins"></i>
+                            <i className="fa-solid fa-coins"></i>
                             </p>
                             <p>
                                 180 points
@@ -136,7 +136,7 @@ export const ProductPage = () => {
                             </span>
                             <span>
                             <p>
-                            <i class="fa-solid fa-wine-bottle"></i>
+                            <i className="fa-solid fa-wine-bottle"></i>
                             </p>
                             <p>
                                 more bottle less price
@@ -144,7 +144,7 @@ export const ProductPage = () => {
                             </span>
                             <span>
                             <p>
-                            <i class="fa-solid fa-right-long"></i>
+                            <i className="fa-solid fa-right-long"></i>
                             </p>
                             <p>
                                 Sending on the same day
