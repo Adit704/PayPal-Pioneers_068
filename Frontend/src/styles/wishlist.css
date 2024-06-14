@@ -1,6 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=PT+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Overpass:ital,wght@0,100..900;1,100..900&family=PT+Mono&display=swap');
-.wishlist-header{
+* {
+    font-family: "Nunito", sans-serif;
+    background-color: #FFF8E9;
+    margin: 0;
+    padding: 0;
+}
+
+.wishlist-container {
+    padding: 20px;
+    display: flex;
+    background-color: #FFF8E9;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wishlist-header {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+    letter-spacing: 2px;
+}
+
+.wishlist-card {
+    background-color: #FFF8E9;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    box-sizing: border-box;
     font-family: "PT Mono", monospace;
-    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border: 1.5px solid rgb(175, 175, 175);
+}
+
+.wishlist-card-img {
+    width: 100px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.wishlist-card-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.wishlist-card-title {
+    font-size: 1.5em;
+    margin: 0;
+    color: #333;
+}
+
+.wishlist-card-code {
+    font-size: 0.9em;
+    color: #888;
+    margin: 10px 0;
+}
+
+.wishlist-card-price {
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: "PT Mono", monospace;
+    color: #000;
+    margin: 10px 0;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 10px;
+}
+
+.wishlist-card-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.wishlist-card-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    margin-right: 10px;
+}
+
+.remove-button {
+    background-color: #f44336;
+    font-size: 1.5em;
+    padding: 0 10px;
+}
+.wishlist-card-button:hover {
+    background-color: #2e9e32;
+}
+
+.remove-button:hover {
+    background-color: #ff0000;
+    color: #FFF8E9;
 }

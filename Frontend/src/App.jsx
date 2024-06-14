@@ -10,6 +10,8 @@ import { HomePageDashBoard } from './components/HomePageDashBoard.jsx';
 // import { DashBoard } from "./components/dashboard/DashBoard"
 
 
+import { WishList } from './components/WishList.jsx';
+import { ProductCard } from './components/ProductCard.jsx';
 
 function App() {
   const dispatch = useDispatch()
@@ -18,7 +20,7 @@ function App() {
     },[])
   return (
     <>
-    <HomePageDashBoard/>
+    {/* <HomePageDashBoard/> */}
 
     <Routes>
         {/* <Route path="/productpage" element={<ProductPage />} /> */}
@@ -26,6 +28,7 @@ function App() {
 
 
     {/* <DashBoard/> */}
+    <WishList />
    
     </>
   )
