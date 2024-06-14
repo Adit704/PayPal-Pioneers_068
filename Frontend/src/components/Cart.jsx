@@ -3,6 +3,7 @@ import '../styles/Cart.css'
 import { CartCard } from "./CartCard"
 import { useSelector } from "react-redux"
 import { Button, Switch } from "@chakra-ui/react"
+import { ProductCard } from "./ProductCard"
 export function Cart({visible, cartToggle}){
     
     const [totalAmount, setTotalAmount] = useState(0)
@@ -12,16 +13,16 @@ export function Cart({visible, cartToggle}){
 
     let product = useSelector(state => state.products)
     // useEffect(()=>{
-    //     localStorage.setItem("wineCart", JSON.stringify({"1":1,"2":1,"10":1,"15":1,"20":1}))
+        // localStorage.setItem("wineCart", JSON.stringify({1:1,2:1,10:1,15:1,20:1}))
     // },[])
     // console.log(product);
     const cart = useMemo(()=>{
-        console.log("hello");
+        // console.log("hello");
         setTotalAmount(0);
         setNewTotalAmount(0);
         let cardDetails = JSON.parse(localStorage.getItem("wineCart"));
         return product.data.filter((elem)=>{
-            if(Object.keys(cardDetails).includes(elem.id)) return true;
+            if(Object.keys(cardDetails).includes(String(elem.id))) return true;
             else false;
         }).map((elem)=>{ 
             setTotalAmount((prev) => {
@@ -81,8 +82,8 @@ export function Cart({visible, cartToggle}){
         <div ><i onClick={cartToggle} style={{fontSize:"20px", color:"gray"}} className="fa-solid hover-effect fa-xmark"></i></div>
         </div>
         <div className="progressBar">
-            {totalAmount>=1000 && <p>You're getting free shipping!</p>}
-            {totalAmount<1000 && <p>Add item worth <b>{1000-newTotalAmount}</b> more to get free shipping!</p>}
+            {newTotalAmount>=1000 && <p>You're getting free shipping!</p>}
+            {newTotalAmount<1000 && <p>Add item worth <b>{Math.round(1000-newTotalAmount)}</b> more to get free shipping!</p>}
             <div  className="progress-bar-section">
             <span>0$</span>
             <progress id="progress-bar" max="1000" value={newTotalAmount}></progress>
@@ -114,14 +115,24 @@ export function Cart({visible, cartToggle}){
             </div>
             <div>
                 <div style={{display:"flex",gap:"10px"}}>
-                    <div><sup style={{color:"gray", textDecoration:"line-through"}}>{totalAmount}$</sup></div>
-                    <div>{newTotalAmount}$</div>
+                    <div><sup style={{color:"gray", textDecoration:"line-through"}}>{Math.round(totalAmount)}$</sup></div>
+                    <div>{Math.round(newTotalAmount)}$</div>
                 </div>
-                <div style={{color:"green", fontSize:"14px"}}>You saved {Math.abs(totalAmount-newTotalAmount)}$</div>
+                <div style={{color:"green", fontSize:"14px"}}>You saved {Math.round(totalAmount-newTotalAmount)}$</div>
             </div>
         </div>
             
         <Button colorScheme="red" className="checkout-button" >Checkout</Button>
+        {product.status == "success" && <div>
+            <div className="mayLike-text">You may like</div>
+            <div className="recommend-cards">
+                <ProductCard  image={product.data[0].img} price={product.data[0].Price} title={product.data[0].title} id={product.data[0].id}/>
+                <ProductCard  image={product.data[1].img} price={product.data[1].Price} title={product.data[1].title} id={product.data[1].id}/>
+                <ProductCard  image={product.data[2].img} price={product.data[2].Price} title={product.data[2].title} id={product.data[2].id}/>
+                <ProductCard  image={product.data[3].img} price={product.data[3].Price} title={product.data[3].title} id={product.data[3].id}/>
+            </div>
+
+        </div>}
             
     </div>
     )
