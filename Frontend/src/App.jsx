@@ -11,6 +11,7 @@ import { Checkout } from './components/Checkout.jsx';
 import { Product } from "./components/dashboard/Product"
 import { WishList } from './components/WishList.jsx';
 import { ProductCard } from './components/ProductCard.jsx';
+import CatlogMain from './components/catlog/CatlogMain.jsx';
 
 function App() {
   const dispatch = useDispatch()
@@ -24,6 +25,7 @@ function App() {
         <Route path ='/checkout' element={<Checkout/>}/>
         <Route path="/productpage" element={<ProductPage />} />
         <Route path='/wishlist' element={<WishList />} />
+        <Route path ='/catlog' element={<CatlogMain/>}/>
     </Routes>
     </>
   )
