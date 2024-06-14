@@ -20,7 +20,7 @@ function App() {
     },[])
   return (
     <>
-    <HomePageDashBoard/>
+    {/* <HomePageDashBoard/> */}
 
     <Routes>
         {/* <Route path="/productpage" element={<ProductPage />} /> */}
@@ -28,6 +28,7 @@ function App() {
 
 
     {/* <DashBoard/> */}
+    <WishList />
    
     </>
   )
