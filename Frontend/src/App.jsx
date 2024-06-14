@@ -7,6 +7,8 @@ import { Routes, Route } from 'react-router-dom';
 import { ProductPage } from './components/ProductPage';
 import { HomePageDashBoard } from './components/HomePageDashBoard.jsx';
 
+import { Product } from "./components/dashboard/Product"
+
 // import { DashBoard } from "./components/dashboard/DashBoard"
 
 
@@ -21,11 +23,12 @@ function App() {
     <HomePageDashBoard/>
 
     <Routes>
-        {/* <Route path="/productpage" element={<ProductPage />} /> */}
+        <Route path="/productpage" element={<ProductPage />} />
     </Routes>
 
 
-    {/* <DashBoard/> */}
+    <DashBoard/>
+    
    
     </>
   )
