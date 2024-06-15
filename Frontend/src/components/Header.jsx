@@ -3,19 +3,22 @@ import "../styles/header.css";
 import wineBottle from "../images/winebottle.png";
 import { useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faCartShopping, faBookmark, faUser} from "@fortawesome/free-solid-svg-icons"
+import {
+  faCartShopping,
+  faBookmark,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import { Cart } from "./Cart";
 import { useCartDisplay } from "../hooks/cartDisplayHook";
-import { useNavigate } from "react-router-dom";
-
+import { useNavigate, Link } from "react-router-dom";
 
 export const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    navigate('/wishlist')
-  }
+    navigate("/wishlist");
+  };
 
   const handleSearchBar = (e) => {
     dispatch({ type: SEARCHBAR, payload: e.target.value });
@@ -42,8 +45,7 @@ export const Header = () => {
             <button className="landing_page_header_search_btn">Search</button>
           </div>
           <div className="landing_page_header_icons">
-
-          <div className="landing_page_header_login">
+            <div className="landing_page_header_login">
               <div className="landing_page_header_login_dropdown_parent">
                 <FontAwesomeIcon
                   className="landing_page_header_icons_children"
@@ -53,22 +55,34 @@ export const Header = () => {
 
               <div className="landing_page_header_icons_login_dropdown">
                 <div className="landing_page_header_icons_login_dropdown_children">
-                <p>Log In</p>
-                <p>Sign Up</p>
+                  <Link to="/login">
+                    {" "}
+                    <p>Log In</p>
+                  </Link>
+                  <Link to="/register">
+                    {" "}
+                    <p>Sign Up</p>
+                  </Link>
                 </div>
               </div>
             </div>
-            
-            
-            
-            <p className="landing_page_header_fav" onClick={handleClick}><FontAwesomeIcon   className="landing_page_header_icons_children" icon={faBookmark} /></p>
-            <p onClick={cartToggle} className="landing_page_header_cart"><FontAwesomeIcon  className="landing_page_header_icons_children" icon={faCartShopping} /></p>
+
+            <p className="landing_page_header_fav" onClick={handleClick}>
+              <FontAwesomeIcon
+                className="landing_page_header_icons_children"
+                icon={faBookmark}
+              />
+            </p>
+            <p onClick={cartToggle} className="landing_page_header_cart">
+              <FontAwesomeIcon
+                className="landing_page_header_icons_children"
+                icon={faCartShopping}
+              />
+            </p>
           </div>
-
         </div>
-        <Cart visible={visible} cartToggle={cartToggle}/>
+        <Cart visible={visible} cartToggle={cartToggle} />
       </header>
-
     </>
   );
 };
