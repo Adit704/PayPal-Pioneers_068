@@ -36,7 +36,7 @@ const Login = () => {
       if (input.email === adminCredentials.email && input.password === adminCredentials.password) {
         // Assuming login logic sets isAuthenticated in local storage
         localStorage.setItem('auth', JSON.stringify({ isAuthenticated: true }));
-        navigate('/dashboar'); // Redirect to home or another route upon successful login
+        navigate('/dashboard'); // Redirect to home or another route upon successful login
       } else {
         toast({
           title: 'Login failed.',
