@@ -42,7 +42,25 @@ export const Header = () => {
             <button className="landing_page_header_search_btn">Search</button>
           </div>
           <div className="landing_page_header_icons">
-            <p className="landing_page_header_login"><FontAwesomeIcon className="landing_page_header_icons_children" icon={faUser} /></p>
+
+          <div className="landing_page_header_login">
+              <div className="landing_page_header_login_dropdown_parent">
+                <FontAwesomeIcon
+                  className="landing_page_header_icons_children"
+                  icon={faUser}
+                />
+              </div>
+
+              <div className="landing_page_header_icons_login_dropdown">
+                <div className="landing_page_header_icons_login_dropdown_children">
+                <p>Log In</p>
+                <p>Sign Up</p>
+                </div>
+              </div>
+            </div>
+            
+            
+            
             <p className="landing_page_header_fav" onClick={handleClick}><FontAwesomeIcon   className="landing_page_header_icons_children" icon={faBookmark} /></p>
             <p onClick={cartToggle} className="landing_page_header_cart"><FontAwesomeIcon  className="landing_page_header_icons_children" icon={faCartShopping} /></p>
           </div>
