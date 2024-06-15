@@ -90,6 +90,7 @@ body {
   background-color: #263043;
   /* overflow-y: auto; */
   transition: all 0.5s;
+  z-index: 10;
 }
 
 .sidebar-title {

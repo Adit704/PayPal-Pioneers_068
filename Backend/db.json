@@ -4,31 +4,40 @@
       "name": "Thakoor",
       "email": "thakoor@gmail.com",
       "id": 1,
-      "password": "thakoor@123"
+      "password": "thakoor@123",
+      "role" : "admin",
+      "wishlist":[]
+      
     },
     {
-      "name": "ashwini",
-      "email": "ashwini@gmail.com",
-      "id": 2,
-      "password": "ashwini@123"
+        "name": "ashwini",
+        "email": "ashwini@gmail.com",
+        "id": 2,
+        "password": "ashwini@123",
+        "role" : "admin",
+        "wishlist":[]
     },
     {
-      "name": "aditya_singh",
-      "email": "aditya_singh@gmail.com",
-      "id": 3,
-      "password": "singh@123"
+        "name": "aditya_singh",
+        "email": "aditya_singh@gmail.com",
+        "id": 3,
+        "password": "singh@123",
+        "role" : "admin",
+        "wishlist":[]
     },
     {
-      "name": "junaid",
-      "email": "junaid@gmail.com",
-      "id": 4,
-      "password": "junaid@123"
+        "name": "junaid",
+        "email": "junaid@gmail.com",
+        "id": 4,
+        "password": "junaid@123",
+        "wishlist":[]
     },
     {
-      "name": "abdulla",
-      "email": "abdulla@gmail.com",
-      "id": 5,
-      "password": "abdulla@123"
+        "name": "abdulla",
+        "email": "abdulla@gmail.com",
+        "id": 5,
+        "password": "abdulla@123",
+        "wishlist":[]
     }
   ],
   "Products":[

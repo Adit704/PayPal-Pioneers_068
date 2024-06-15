@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BsFillBellFill, BsFillEnvelopeFill, BsPersonCircle, BsSearch, BsJustify } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 export const Header = ({ OpenSidebar, onSearch }) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -33,7 +34,7 @@ export const Header = ({ OpenSidebar, onSearch }) => {
       <div className='header-right' style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
         <BsFillBellFill className='icon' style={{ fontSize: '24px', cursor: 'pointer' }} />
         <BsFillEnvelopeFill className='icon' style={{ fontSize: '24px', cursor: 'pointer' }} />
-        <BsPersonCircle className='icon' style={{ fontSize: '24px', cursor: 'pointer' }} />
+        <Link to='/login'><BsPersonCircle className='icon' style={{ fontSize: '24px', cursor: 'pointer' }} /> </Link>
       </div>
     </header>
   );
