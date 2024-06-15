@@ -5,6 +5,7 @@ import Products from './Product';
 import { ProductCard } from '../ProductCard';
 import { useEffect } from 'react';
 
+
 const CatlogMain = () => {
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
@@ -72,6 +73,7 @@ const CatlogMain = () => {
         filteredProducts = filterByPriceRange(filteredProducts, selectedPriceRange);
       }
   
+      // console.log(filteredProducts);
       return filteredProducts.map(
         (item) => (
           <ProductCard

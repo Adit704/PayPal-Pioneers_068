@@ -14,25 +14,25 @@ function Category({ handleChange }) {
         </label>
         <Input
           handleChange={handleChange}
-          value="Brunello di Montalcino, 0,75L"
+          value="White wine"
           title="White wine"
           name="test"
         />
         <Input
           handleChange={handleChange}
-          value="Sancerre Blanc, 0,75L"
+          value="Red wine"
           title="Red wine"
           name="test"
         />
         <Input
           handleChange={handleChange}
-          value="Chablis Premier Cru, 0,75L"
+          value="Rose wine"
           title="Rose wine"
           name="test"
         />
         <Input
           handleChange={handleChange}
-          value="Chateau Beaulieu Cuvee Alexandree, 0,75L"
+          value="Wine sets"
           title="Wine sets"
           name="test"
         />
