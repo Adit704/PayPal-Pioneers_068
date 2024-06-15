@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react'
+
 import '../styles/productpage.css'
 import { useDispatch } from 'react-redux';
-import axios from "axios"
+import { useSelector } from 'react-redux';
+import { useNavigate } from "react-router-dom";
+import { ProductSuggstion } from './ProductSuggstion';
 
 export const ProductPage = () => {
     const[item, setItem] = useState({});
     const product_id = localStorage.getItem("currentCard");
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -26,14 +30,22 @@ export const ProductPage = () => {
         dispatch({type:"DATA_FROM_PRODUCT_PAGE", payload : item})
     }
 
+    const handleHomeNavigate = () => {
+        navigate("/");
+    }
+
+    const handleCatlogNav = () => {
+        navigate('/catlog');
+    }
+
 
     console.log(item);
 
   return (
     <div className='producr-main-page-container'>
         <div className='product-page-navbar'>
-            <span>Home</span>
-            <span>Catalog</span>
+            <span onClick={handleHomeNavigate}>Home</span>
+            <span onClick={handleCatlogNav}>Catalog</span>
             <span>Red Wine</span>
             <p>{item.title}</p>
         </div>
@@ -42,7 +54,7 @@ export const ProductPage = () => {
         </div>
         <div className='productpage-body-container'>
             <div className='productpage-image'>
-                <img src={item.img} alt="wine image" />
+                <img src={item.img} style= {{mixBlendMode:"multiply"}} alt="wine image" />
             </div>
             <div className='productpage-right-container'>
                     <div className='product-body-right-top'>
@@ -96,7 +108,7 @@ export const ProductPage = () => {
                             <p className='productpage-desc'>{item.description}</p>
                         </div> 
                         <div>
-                            <img src="https://img.freepik.com/premium-vector/highly-detailed-usa-map-with-borders-isolated-background-flat-style_599062-1164.jpg" alt="" />
+                            <img src="https://img.freepik.com/premium-vector/highly-detailed-usa-map-with-borders-isolated-background-flat-style_599062-1164.jpg"  alt="" />
                         </div>
                     </div>
                     <div className='productpage-availability'>
@@ -111,7 +123,7 @@ export const ProductPage = () => {
                     </div>
                     {/* middle sec */}
                     <div className='productpage-addtocart-container'>
-                        <p>{item.price}$</p>
+                        <p>{item.Price}$</p>
                         <p>Add to cart</p>
                         <p>Quick order</p>
                     </div>
@@ -153,6 +165,9 @@ export const ProductPage = () => {
                     </div>
             </div>
         </div>
+        <div>
+        </div>
+        <ProductSuggstion />
     </div>
   )
 }

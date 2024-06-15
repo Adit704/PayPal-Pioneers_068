@@ -1,16 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/productCard.css'
-import { useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 
 export const ProductCard = ({item}) => {
-    const dispatch = useDispatch();
+    const [data, setData] = useState(() => {
+        const savedData = localStorage.getItem("WishListData");
+        return savedData ? JSON.parse(savedData) : [];
+    });
 
+    const [isClicked, setIsClicked] = useState(false);
 
-    const handleAdd = () => {
-        dispatch({type: "DATA_FROM_PRODUCT_CARD", payload : item})
-    }
+    const navigate = useNavigate();
 
     const {img : image, newPrice : price, title, id,country, rating, color, type} = item;
+
+    const handleAdd = () => {
+        const updatedData = [...data, item]
+        setData(updatedData);
+        setIsClicked(true);
+        console.log(item);
+    }
+    console.log(data);
+
+    useEffect(() => {
+        localStorage.setItem("WishListData", JSON.stringify(data));
+    }, [data])
+
+    const handleClick = () => {
+        localStorage.setItem("currentCard", id);
+        navigate('/productpage');
+    }
+
+
 
 
   return (
@@ -22,11 +43,12 @@ export const ProductCard = ({item}) => {
             </div>
             <div className='product-icon'>
                 <span><i className="fas fa-balance-scale legal-icon"></i></span>
-                <span onClick={handleAdd}><i className="fa-regular fa-heart heart-icon"></i></span>
+                <span onClick={handleAdd}>
+                <i className={`fa-regular fa-heart heart-icon ${isClicked ? 'red' : ''}`}></i>
+                    </span>
             </div>
         </div>
-        <div onClick={() => {localStorage.setItem("currentCard", id)
-        }}  className="card-main-section">
+        <div onClick={handleClick}  className="card-main-section">
 
         <div className='product-image-container'>
             <img src={image} alt="wine bottle" style= {{mixBlendMode:"multiply"}} className='product-image' />
@@ -41,7 +63,7 @@ export const ProductCard = ({item}) => {
         </div>
         </div>
         <div className='product-border'></div>
-        <div className='product-price'>
+        <div className='product-price-container'>
             <span className='product-price-1'>{price}$</span>
             <span className='product-cart-button'>&#43;</span>
         </div>

@@ -6,9 +6,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faCartShopping, faBookmark, faUser} from "@fortawesome/free-solid-svg-icons"
 import { Cart } from "./Cart";
 import { useCartDisplay } from "../hooks/cartDisplayHook";
+import { useNavigate } from "react-router-dom";
+
 
 export const Header = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const handleClick = () => {
+    navigate('/wishlist')
+  }
 
   const handleSearchBar = (e) => {
     dispatch({ type: SEARCHBAR, payload: e.target.value });
@@ -36,7 +43,7 @@ export const Header = () => {
           </div>
           <div className="landing_page_header_icons">
             <p className="landing_page_header_login"><FontAwesomeIcon className="landing_page_header_icons_children" icon={faUser} /></p>
-            <p className="landing_page_header_fav"><FontAwesomeIcon   className="landing_page_header_icons_children" icon={faBookmark} /></p>
+            <p className="landing_page_header_fav" onClick={handleClick}><FontAwesomeIcon   className="landing_page_header_icons_children" icon={faBookmark} /></p>
             <p onClick={cartToggle} className="landing_page_header_cart"><FontAwesomeIcon  className="landing_page_header_icons_children" icon={faCartShopping} /></p>
           </div>
 
