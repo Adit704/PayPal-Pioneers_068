@@ -16,7 +16,7 @@ const Nav = ({ handleInputChange, query }) => {
           placeholder="Enter your search shoes."
         />
       </div>
-      <div className="profile-container">
+      {/* <div className="profile-container">
         <a href="#">
           <FiHeart className="nav-icons" />
         </a>
@@ -26,7 +26,7 @@ const Nav = ({ handleInputChange, query }) => {
         <a href="">
           <AiOutlineUserAdd className="nav-icons" />
         </a>
-      </div>
+      </div> */}
     </nav>
   );
 };
