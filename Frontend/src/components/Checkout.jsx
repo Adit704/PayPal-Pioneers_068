@@ -3,10 +3,13 @@ import { CheckoutCard } from "./CheckoutCard"
 import { useSelector } from "react-redux"
 import '../styles/checkout.css'
 import { Button, Input } from "@chakra-ui/react"
+import { useNavigate } from "react-router-dom"
+import { Cart } from "./Cart"
 export function Checkout(){
     const [totalAmount, setTotalAmount] = useState(0)
     const [newTotalAmount, setNewTotalAmount] = useState(0)
     const [checkoutStatus,setCheckoutStatus] = useState("info");
+    const navigate = useNavigate();
     // console.log(visible);
     let product = useSelector(state => state.products)
     // useEffect(()=>{
@@ -49,11 +52,11 @@ export function Checkout(){
                         <form action="">
                         {checkoutStatus == "info" && <div>
                             <div style={{display:"flex", flexWrap:"wrap",justifyContent:"space-between"}}>
-                                <div>
+                                <div style={{width:"45%"}}>
                                     <label htmlFor="">First name</label>
-                                    <Input border={"1px solid"} required/>
+                                    <Input w="100%" border={"1px solid"} required/>
                                 </div>
-                                <div>
+                                <div style={{width:"45%"}}>
                                     <label htmlFor="">Last name</label>
                                     <Input border={"1px solid"} required/>
                                 </div>
@@ -71,9 +74,11 @@ export function Checkout(){
                                     <Input border={"1px solid"} />
                                 </div>
                         </div> }
+                        {checkoutStatus == "deli" && <div>
+
+                        </div> }
                         {}
-                        {}
-                        <Button w={"`00%"} colorScheme="red">Continue</Button>
+                        <Button w="100%" colorScheme="red">Continue</Button>
                         </form>
                     </div>
                 </div>
@@ -81,7 +86,7 @@ export function Checkout(){
                     <div className="your-cart" >
                     <div style={{display:"flex", justifyContent:"flex-end", alignItems:"flex-start", width:"100%"}}>
                         <h1 className="cart-title">Your cart</h1>
-                        <div style={{color:"gray"}} ><u>Edit</u></div>
+                        <div onClick={()=>{navigate("/")}} style={{color:"gray"}} ><u>Edit</u></div>
                     </div>
                     <div className="progressBar">
                         {newTotalAmount>=1000 && <p>You're getting free shipping!</p>}
@@ -105,7 +110,7 @@ export function Checkout(){
                     <span>Discount</span><span style={{color:"green",}}>{Math.round(newTotalAmount-totalAmount)}$</span>
                     </div>
                     <div><span>Subtotal</span><span></span>{Math.round(totalAmount)}$</div>
-                    <div><span>Delivery</span><span>{newTotalAmount < 1000 && 30}{newTotalAmount >= 1000 && <span>Free</span> }$</span></div>
+                    <div><span>Delivery</span><span>{newTotalAmount < 1000 && <span>30$</span> }{newTotalAmount >= 1000 && <span>Free</span> }</span></div>
                 </div>
                 <div className="total-cart-value">
                     <div className="item-count">
@@ -114,7 +119,7 @@ export function Checkout(){
                     </div>
                     <div>
                         <div style={{display:"flex",gap:"10px"}}>
-                            <div className="subtotal-text" >{Math.round(newTotalAmount)}$</div>
+                            <div className="subtotal-text" >{Math.round(newTotalAmount) >= 1000 && Math.round(newTotalAmount)}{Math.round(newTotalAmount) < Math.round(newTotalAmount)}$</div>
                         </div>
                     </div>
                 </div>

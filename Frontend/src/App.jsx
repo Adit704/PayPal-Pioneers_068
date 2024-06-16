@@ -26,6 +26,7 @@ function App() {
         <Route path="/productpage" element={<ProductPage />} />
         <Route path='/wishlist' element={<WishList />} />
         <Route path ='/catlog' element={<CatlogMain/>}/>
+        
     </Routes>
     </>
   )
