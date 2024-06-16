@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import '../styles/productCard.css'
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
@@ -15,6 +15,7 @@ export const ProductCard = ({item}) => {
     const navigate = useNavigate();
 
     const {img : image, newPrice : price, title, id,country, rating, color, type} = item;
+    console.log(item)
 
     const handleAdd = () => {
         const updatedData = [...data, item]

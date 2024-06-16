@@ -23,6 +23,8 @@ import {
   AlertDialogContent,
   AlertDialogOverlay
 } from '@chakra-ui/react';
+import { Header } from "./Header";
+import { Sidebar } from "./Sidebar";
 
 export const Product = () => {
   const [products, setProducts] = useState([]);
@@ -33,7 +35,7 @@ export const Product = () => {
   const [isAlertOpen, setIsAlertOpen] = useState(false);
   const cancelRef = React.useRef();
   const toast = useToast();
-  
+
   const apiUrl = "https://paypal-pioneers-068.onrender.com/Products";
 
   useEffect(() => {
@@ -106,6 +108,9 @@ export const Product = () => {
   };
 
   return (
+    <>
+    <Sidebar/>
+    <Header/>
     <div className='grid-container'>
       <main className='main-container'>
         <div className='main-title'>
@@ -182,7 +187,7 @@ export const Product = () => {
         isOpen={isAlertOpen}
         leastDestructiveRef={cancelRef}
         onClose={() => setIsAlertOpen(false)}
-      >
+        >
         <AlertDialogOverlay>
           <AlertDialogContent>
             <AlertDialogHeader>Delete Product</AlertDialogHeader>
@@ -201,5 +206,6 @@ export const Product = () => {
         </AlertDialogOverlay>
       </AlertDialog>
     </div>
+        </>
   );
 };

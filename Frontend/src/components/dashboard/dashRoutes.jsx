@@ -7,7 +7,7 @@ export const dashRoutes = () => {
   return (
     <Routes>
         <Route path='/' element={<DashBoard/>}/>
-        <Route path='/pro' element={<Product/>} />
+        <Route path='/products' element={<Product/>} />
     </Routes>
   )
 }

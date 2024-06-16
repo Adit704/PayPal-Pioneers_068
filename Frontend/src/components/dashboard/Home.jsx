@@ -77,7 +77,7 @@ export const Home = ({ data }) => {
         </div>
       </div>
 
-      <div className='charts' style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginTop: '60px', height: '300px', paddingLeft:"10%", paddingRight:"10px" }}>
+      <div className='charts' style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginTop: '60px', height: '300px', paddingRight:"10px" }}>
         <ResponsiveContainer width="100%" height={400}>
           <BarChart
             data={chartData}
