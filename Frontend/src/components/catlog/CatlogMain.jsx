@@ -91,12 +91,14 @@ const CatlogMain = () => {
     const result = filteredData(products, selectedCategory, selectedPriceRange, query);
     return (
       <>
+        <div style={{backgroundColor:"#FFF8E9"}}>
         <Header/>
         <Sidebar handleChange={handleChange} />
         {/* <Navigation query={query} handleInputChange={handleInputChange} /> */}
         <Recommended handleClick={handleClick} />
         <Products result={result} />
         <Footer/>
+        </div>
         
       </>
     );
