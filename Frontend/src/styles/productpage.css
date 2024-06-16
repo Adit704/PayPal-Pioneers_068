@@ -2,11 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=PT+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Overpass:ital,wght@0,100..900;1,100..900&family=PT+Mono&display=swap');
+.product-main-page-container {
+  background-color: #FFF8E9;
+}
 .productpage-right-container{
     width: 70%;
 }
-.producr-main-page-container{
-    background-color: #FFF8E9;
+.product-main-page-container{
     max-width: 1500px; 
     padding: 10px;
     margin: 0 auto; 

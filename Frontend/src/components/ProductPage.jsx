@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import '../styles/productpage.css'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ProductSuggstion } from './ProductSuggstion';
 import { ProductReview } from './ProductReview';
 
@@ -13,7 +13,6 @@ export const ProductPage = () => {
     const product_id = localStorage.getItem("currentCard");
     const navigate = useNavigate();
     const dispatch = useDispatch();
-
     useEffect(() => {
        const fetchData = async () => {
         isLoading(true);
@@ -38,10 +37,15 @@ export const ProductPage = () => {
         navigate("/");
     }
 
-    const handleCatalogNavigate = () => {
-        navigate('/catalog');
-    };
-
+    const handleCatlogNav = () => {
+        navigate('/catlog');
+    }
+    const handleAddToCart = () =>{
+        let obj = JSON.parse(localStorage.getItem("wineCart")) || {};
+        obj[product_id] = 1; 
+        localStorage.setItem("wineCart",JSON.stringify(obj));
+        dispatch({type:"REFRESH_CART"})
+    }
 
     console.log(item);
 
@@ -53,7 +57,7 @@ export const ProductPage = () => {
                 <>
                     <div className='product-page-navbar'>
                         <span onClick={handleHomeNavigate}>Home</span>
-                        <span onClick={handleCatalogNavigate}>Catalog</span>
+                        <span onClick={handleCatlogNav}>Catalog</span>
                         <span>Red Wine</span>
                         <p>{item.title}</p>
                     </div>
@@ -133,8 +137,11 @@ export const ProductPage = () => {
                             {/* middle sec */}
                             <div className='productpage-addtocart-container'>
                                 <p>{item.price}$</p>
-                                <p>Add to cart</p>
-                                <p>Quick order</p>
+                                <p onClick={handleAddToCart}>Add to cart</p>
+                                <p onClick={()=>{
+                            handleAddToCart();
+                            navigate("/checkout")
+                        }}>Quick order</p>
                             </div>
                             <div className='productpage-bottom-container'>
                                 <span>

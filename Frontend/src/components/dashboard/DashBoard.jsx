@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import './dashstyle/dash.css';
-import { Header } from './Header';
+import './dashstyle/dash.css'
+import { Header } from './../dashboard/Header';
 import { Sidebar } from './Sidebar';
 import { Home } from './Home';
 import { Product } from './Product';
@@ -10,6 +10,7 @@ export const DashBoard = () => {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
   const [originalData, setOriginalData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,7 +34,6 @@ export const DashBoard = () => {
     );
     setFilteredData(filtered);
   };
-
   return (
     <div className='grid-container' style={{ display: 'grid', height: '100vh' }}>
       <Sidebar OpenSidebar={openSidebar} openSidebarToggle={openSidebarToggle} />

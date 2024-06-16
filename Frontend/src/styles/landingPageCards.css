@@ -4,12 +4,14 @@
   margin: 0;
 }
 
-#landing_page_what_would_you_like, #landing_page_set_and_gifts {
+#landing_page_what_would_you_like,
+#landing_page_set_and_gifts {
   width: 80%;
   margin: 7vh auto;
 }
 
-.what_would_you_like_title, .set_and_gifts_title {
+.what_would_you_like_title,
+.set_and_gifts_title {
   font-size: 2rem;
   font-weight: bold;
 }
@@ -28,7 +30,8 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.what_would_you_like_cards_img, .set_and_gifts_cards_img {
+.what_would_you_like_cards_img,
+.set_and_gifts_cards_img {
   width: 100%;
   height: 100%;
 }
@@ -44,33 +47,38 @@
   transform: scale3d(1.1, 1.1, 1.1);
 }
 
-@media (max-width: 1200px) {
+@media screen and (max-width: 431px) {
   .what_would_you_like_title {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
 
   .what_would_you_like_cards {
-    gap: 2vw;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 4vh;
+  }
+
+  .what_would_you_like_cards_children {
+    width: 100%;
+    height: auto;
   }
 
   .what_would_you_like_cards_title {
-    font-size: 1.2rem;
+    font-size: 0.5rem;
   }
 }
 
-@media (max-width: 992px) {
+
+ @media screen and (min-width: 432px) and (max-width: 1024px) {
   .what_would_you_like_cards_children {
     width: 80%;
   }
 
-  .what_would_you_like_title{
+  .what_would_you_like_title {
     font-size: 1.6rem;
-    text-align: center;
   }
 
   .what_would_you_like_cards {
-    align-items: center;
-    gap: 2vh;
+    gap: 4vh;
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -79,46 +87,24 @@
   }
 }
 
-@media (max-width: 768px) {
+ @media screen and (min-width: 1025px) {
   .what_would_you_like_title {
-    font-size: 1.4rem;
-    text-align: center;
+    font-size: 1.8rem;
   }
 
   .what_would_you_like_cards {
-    grid-template-columns: repeat(1, 1fr);
+    gap: 2vw;
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
-    gap: 1vh;
-  }
-
-  .what_would_you_like_cards_children {
-    width: 60%;
-   margin: 3vh 0;
   }
 
   .what_would_you_like_cards_title {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .what_would_you_like_title {
     font-size: 1.2rem;
-    text-align: center;
-   
+    gap: 6vh;
   }
+} 
 
-  .what_would_you_like_cards_children {
-    width: 100%;
-  }
-
-  .what_would_you_like_cards_title {
-    font-size: 0.9rem;
-  }
-}
-
-
-/* --------------- Set's and Gifts------------- */ 
+/* --------------- Set's and Gifts------------- */
 
 .set_and_gifts_cards {
   display: grid;
@@ -128,57 +114,33 @@
   gap: 3vw;
 }
 
-.set_and_gifts_cards_img_parent{
+.set_and_gifts_cards_img_parent {
   height: 80%;
 }
 
-.set_and_gifts_cards_img{
- border-radius: 10px;
+.set_and_gifts_cards_img {
+  border-radius: 10px;
 }
 
-.set_and_gifts_cards_title{
+.set_and_gifts_cards_title {
   margin: 2vh 0 0 1vw;
   font-size: 1.3rem;
   font-weight: bold;
 }
 
-@media (max-width: 992px){
-  .set_and_gifts_cards {
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    gap: 1vh;
-  }
-
-  .set_and_gifts_cards_children {
-    width: 80%;
-  }
-
-  .set_and_gifts_cards_title{
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 768px){
-  .set_and_gifts_cards {
-    grid-template-columns: repeat(1, 1fr);
-    align-items: center;
-    gap: 1vh;
-  }
-
-  .set_and_gifts_cards_children {
-    width: 60%;
-  }
-
-  .set_and_gifts_cards_title{
-    font-size: 1rem;
-  }
+.set_and_gifts_cards_children {
+  transition: transform 0.3s ease-in-out;
 }
 
 
-@media (max-width: 576px){
+.set_and_gifts_cards_children:hover {
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+
+
+@media screen and (max-width: 431px) {
   .set_and_gifts_cards {
     grid-template-columns: repeat(1, 1fr);
-    align-items: center;
     gap: 1vh;
   }
 
@@ -186,11 +148,30 @@
     width: 90%;
   }
 
-  .set_and_gifts_cards_title{
-    font-size: 1rem;
+}
+
+ @media screen and (min-width: 432px) and (max-width: 1024px) {
+  .set_and_gifts_cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1vh;
+  }
+
+  .set_and_gifts_cards_children {
+    width: 60%;
   }
 
 }
 
 
 
+@media  screen and (min-width: 1025px) {
+  .set_and_gifts_cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vh;
+  }
+
+  .set_and_gifts_cards_children {
+    width: 80%;
+  }
+
+}

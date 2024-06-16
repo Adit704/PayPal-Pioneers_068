@@ -23,6 +23,8 @@ import {
   AlertDialogContent,
   AlertDialogOverlay
 } from '@chakra-ui/react';
+import { Header } from "./Header";
+import { Sidebar } from "./Sidebar";
 
 export const Product = () => {
   const [products, setProducts] = useState([]);
@@ -33,7 +35,7 @@ export const Product = () => {
   const [isAlertOpen, setIsAlertOpen] = useState(false);
   const cancelRef = React.useRef();
   const toast = useToast();
-  
+
   const apiUrl = "https://paypal-pioneers-068.onrender.com/Products";
 
   useEffect(() => {
@@ -106,6 +108,9 @@ export const Product = () => {
   };
 
   return (
+    <>
+    <Sidebar/>
+    <Header/>
     <div className='grid-container'>
       <main className='main-container'>
         <div className='main-title'>
@@ -122,15 +127,15 @@ export const Product = () => {
 
             <Button colorScheme='teal' onClick={() => handleOpenModal()} style={{color:"white", padding:"10px"}}>Add Product</Button>
         </div>
-        <div className='main-cards'>
+        <div className='main-cards' >
           {filteredProducts.map((product) => (
-            <div key={product.id} className='card'>
-              <img src={product.img} alt={product.title} className='card-image'/>
-              <div className='card-details'>
-                <h3 className='card-title'>{product.title}</h3>
-                <p className='card-category'>Category: {product.category}</p>
-                <p className='card-price'>Price: ${product.Price}</p>
-                <p className='card-description'>{product.description}</p>
+            <div key={product.id} className='card' >
+              <img style={{backgroundColor:"white"}} src={product.img} alt={product.title} className='card-image'/>
+              <div className='card-details' >
+                <h3 className='card-title' style={{backgroundColor:"white"}}>{product.title}</h3>
+                <p className='card-category' style={{backgroundColor:"white"}}>Category: {product.category}</p>
+                <p className='card-price' style={{backgroundColor:"white"}}>Price: ${product.Price}</p>
+                <p className='card-description' style={{backgroundColor:"white"}}>{product.description}</p>
               </div>
               <Stack spacing={4} direction='row' align='center'>
                 <Button colorScheme='teal' size='xs' onClick={() => handleOpenModal(product)}>Update</Button>
@@ -182,7 +187,7 @@ export const Product = () => {
         isOpen={isAlertOpen}
         leastDestructiveRef={cancelRef}
         onClose={() => setIsAlertOpen(false)}
-      >
+        >
         <AlertDialogOverlay>
           <AlertDialogContent>
             <AlertDialogHeader>Delete Product</AlertDialogHeader>
@@ -201,5 +206,6 @@ export const Product = () => {
         </AlertDialogOverlay>
       </AlertDialog>
     </div>
+        </>
   );
 };
