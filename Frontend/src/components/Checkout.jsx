@@ -92,9 +92,20 @@ export function Checkout(){
                         <form onSubmit={handleSubmit} className="checkout-form">
                         {checkoutOrder[checkoutStatus] == "info" && <div>
                             <div >
-                                <RadioGroup mb={5} colorScheme="red" display={"flex"} gap={10}>
+                                <RadioGroup defaultValue="1" mb={5} colorScheme="red" display={"flex"} gap={10} onChange={(value)=>{
+                                    if(value == 2){
+                                        const user = JSON.parse(localStorage.getItem("user"));
+                                        if(user){
+                                            inputRef[0].value = user.name;
+                                            inputRef[3].value = user.email;
+                                        }
+                                        else{
+                                            navigate("/login");
+                                        }
+                                    }
+                                }}>
                                    
-                                        <Radio value="1" >I am a new customer</Radio>
+                                        <Radio value="1" checked>I am a new customer</Radio>
                                         <Radio value="2">I have an account</Radio>
                                 
                                 </RadioGroup>
@@ -102,11 +113,11 @@ export function Checkout(){
                             <div style={{display:"flex", flexWrap:"wrap",justifyContent:"space-between"}}>
                                 <div style={{width:"45%" ,minWidth:"300px"}}>
                                     <label htmlFor="">First name</label>
-                                    <Input ref={(e)=>{inputRef[0] = e}} border={"1px solid"} required/>
+                                    <Input  ref={(e)=>{inputRef[0] = e}} border={"1px solid"} required/>
                                 </div>
                                 <div style={{width:"45%",minWidth:"300px"}}>
                                     <label htmlFor="">Last name</label>
-                                    <Input ref={(e)=>{inputRef[1] = e}} border={"1px solid"} required/>
+                                    <Input  ref={(e)=>{inputRef[1] = e}} border={"1px solid"} required/>
                                 </div>
                             </div>
                                 <div>
@@ -207,7 +218,13 @@ export function Checkout(){
                 </div>
             </div>}
             {checkoutStatus == 4 && <div className="thank-you">
-                
+                <img src="../assets/exitPage.png" alt="" />
+                <div>
+                    <h2>Thank you for your purchase!</h2>
+                    <div>Your order number is <b>3357</b></div>
+                    <div>You can find details in a confirmation mail or your account</div>
+                    <Button onClick={()=>{navigate("/")}}>Continue shopping</Button>
+                </div>
             </div> }
         </div>
     )
