@@ -29,6 +29,7 @@
         "name": "junaid",
         "email": "junaid@gmail.com",
         "id": 4,
+        "role":"user",
         "password": "junaid@123",
         "wishlist":[]
     },
@@ -36,6 +37,7 @@
         "name": "abdulla",
         "email": "abdulla@gmail.com",
         "id": 5,
+        "role":"user",
         "password": "abdulla@123",
         "wishlist":[]
     }

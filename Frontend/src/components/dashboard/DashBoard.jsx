@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import './dashstyle/dash.css';
-import { Header } from './Header';
+import './dashstyle/dash.css'
+import { Header } from './../dashboard/Header';
 import { Sidebar } from './Sidebar';
 import { Home } from './Home';
 import { Product } from './Product';
