@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import '../styles/productCard.css'
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
+import { useToast } from '@chakra-ui/react';
 
 export const ProductCard = ({item}) => {
     const [data, setData] = useState(() => {
@@ -15,6 +16,8 @@ export const ProductCard = ({item}) => {
     const navigate = useNavigate();
 
     const {img : image, newPrice : price, title, id,country, rating, color, type} = item;
+
+    const toast = useToast()
 
     const handleAdd = () => {
         const updatedData = [...data, item]
@@ -37,7 +40,11 @@ export const ProductCard = ({item}) => {
         obj[id] = 1; 
         localStorage.setItem("wineCart",JSON.stringify(obj));
         dispatch({type:"REFRESH_CART"})
-        
+        toast({
+            title:"Product added to cart",
+            status: 'success',
+            duration: 2000,
+        })
     }
 
 
