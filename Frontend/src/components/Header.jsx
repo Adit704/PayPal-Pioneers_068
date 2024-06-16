@@ -46,11 +46,13 @@ export const Header = () => {
     <>
       <header id="landing_page_header">
         <div className="landing_page_header_logo_parent">
+          <Link to="/" >
           <img
             className="landing_page_header_logo"
             src={wineBottle}
             alt="This is logo"
           />
+          </Link>
         </div>
         <div className="landing_page_header_search_parent_parent">
           <div className="landing_page_header_search_parent">
