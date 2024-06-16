@@ -15,7 +15,8 @@
 
 
  #landing_page_combination_cards > div {
-  width:215px;
+  width:25%;
+  height: 515px;
 }
 
 #landing_page_combination_card_titles {

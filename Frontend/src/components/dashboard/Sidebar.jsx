@@ -15,9 +15,9 @@ export const Sidebar = ({ openSidebarToggle, OpenSidebar }) => {
   const navigate = useNavigate();
 
   return (
-    <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive" : ""}>
-      <div className='sidebar-title'>
-        <div className='sidebar-brand'>
+    <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive" : ""} style={{backgroundColor:"#263043", color:"white"}}> 
+      <div className='sidebar-title' >
+        <div className='sidebar-brand' >
           <BsCart3 className='icon_header' /> SHOP
         </div>
         <span className='icon close_icon' onClick={OpenSidebar}>X</span>
@@ -30,19 +30,19 @@ export const Sidebar = ({ openSidebarToggle, OpenSidebar }) => {
         <li className='sidebar-list-item' onClick={() => navigate('/products')}>
           <BsFillArchiveFill className='icon' /> Products
         </li>
-        <li className='sidebar-list-item' onClick={() => navigate('/categories')}>
+        <li className='sidebar-list-item' onClick={() => navigate('/products')}>
           <BsFillGrid3X3GapFill className='icon' /> Categories
         </li>
-        <li className='sidebar-list-item' onClick={() => navigate('/customers')}>
+        <li className='sidebar-list-item' onClick={() => navigate('/dashboard')}>
           <BsPeopleFill className='icon' /> Customers
         </li>
-        <li className='sidebar-list-item' onClick={() => navigate('/inventory')}>
+        <li className='sidebar-list-item' onClick={() => navigate('/products')}>
           <BsListCheck className='icon' /> Inventory
         </li>
-        <li className='sidebar-list-item' onClick={() => navigate('/reports')}>
+        <li className='sidebar-list-item' onClick={() => navigate('/dashboard')}>
           <BsMenuButtonWideFill className='icon' /> Reports
         </li>
-        <li className='sidebar-list-item' onClick={() => navigate('/settings')}>
+        <li className='sidebar-list-item' onClick={() => navigate('/dashboard')}>
           <BsFillGearFill className='icon' /> Settings
         </li>
       </ul>
