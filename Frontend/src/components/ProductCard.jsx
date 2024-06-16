@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
 import '../styles/productCard.css'
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
 
 export const ProductCard = ({item}) => {
     const [data, setData] = useState(() => {
         const savedData = localStorage.getItem("WishListData");
         return savedData ? JSON.parse(savedData) : [];
     });
+    const dispatch = useDispatch();
 
     const [isClicked, setIsClicked] = useState(false);
 
@@ -32,7 +34,12 @@ export const ProductCard = ({item}) => {
         navigate('/productpage');
     }
 
-
+    const handleAddToCart = () =>{
+        let obj = JSON.parse(localStorage.getItem("wineCart"));
+        obj[id] = 1; 
+        localStorage.setItem("wineCart",JSON.stringify(obj));
+        dispatch({type:"REFRESH_CART"})
+    }
 
 
   return (
@@ -66,7 +73,7 @@ export const ProductCard = ({item}) => {
         <div className='product-border'></div>
         <div className='product-price-container'>
             <span className='product-price-1'>{price}$</span>
-            <span className='product-cart-button'>&#43;</span>
+            <span onClick={handleAddToCart} className='product-cart-button'>&#43;</span>
         </div>
     </div>
   )

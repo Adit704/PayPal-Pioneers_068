@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import '../styles/productpage.css'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ProductSuggstion } from './ProductSuggstion';
 
 export const ProductPage = () => {
@@ -11,7 +11,6 @@ export const ProductPage = () => {
     const product_id = localStorage.getItem("currentCard");
     const navigate = useNavigate();
     const dispatch = useDispatch();
-
     useEffect(() => {
        const fetchData = async () => {
         try {
@@ -37,7 +36,12 @@ export const ProductPage = () => {
     const handleCatlogNav = () => {
         navigate('/catlog');
     }
-
+    const handleAddToCart = () =>{
+        let obj = JSON.parse(localStorage.getItem("wineCart"));
+        obj[product_id] = 1; 
+        localStorage.setItem("wineCart",JSON.stringify(obj));
+        dispatch({type:"REFRESH_CART"})
+    }
 
     console.log(item);
 
@@ -124,8 +128,11 @@ export const ProductPage = () => {
                     {/* middle sec */}
                     <div className='productpage-addtocart-container'>
                         <p>{item.Price}$</p>
-                        <p>Add to cart</p>
-                        <p>Quick order</p>
+                        <p onClick={handleAddToCart}>Add to cart</p>
+                        <p onClick={()=>{
+                            handleAddToCart();
+                            navigate("/checkout")
+                        }}>Quick order</p>
                     </div>
                     <div className='productpage-bootom-container'>
                         <span>
