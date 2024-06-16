@@ -146,7 +146,7 @@ export const ProductPage = () => {
                             </div>
                             {/* middle sec */}
                             <div className='productpage-addtocart-container'>
-                                <p>{item.price}$</p>
+                                <p>{item.newPrice}$</p>
                                 <p onClick={handleAddToCart}>Add to cart</p>
                                 <p onClick={()=>{
                             handleAddToCart();
