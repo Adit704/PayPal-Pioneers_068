@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux';
 import { Link, useNavigate } from "react-router-dom";
 import { ProductSuggstion } from './ProductSuggstion';
 import { ProductReview } from './ProductReview';
+import { Header } from './Header';
+import { Footer } from './Footer';
 import { useToast } from '@chakra-ui/react';
 
 export const ProductPage = () => {
@@ -62,12 +64,13 @@ export const ProductPage = () => {
                 <h1 className='page-loading-head'>Loading...</h1>
             ) : (
                 <>
-                    <div className='product-page-navbar'>
+                    <Header/>
+                    {/* <div className='product-page-navbar'>
                         <span onClick={handleHomeNavigate}>Home</span>
                         <span onClick={handleCatlogNav}>Catalog</span>
                         <span>Red Wine</span>
                         <p>{item.title}</p>
-                    </div>
+                    </div> */}
                     <div className='product-page-head'>
                         <h1>{item.title}</h1>
                     </div>
@@ -188,6 +191,7 @@ export const ProductPage = () => {
                     </div>
                     <ProductReview />
                     <ProductSuggstion />
+                    <Footer/>
                 </>
             )}
         </div>

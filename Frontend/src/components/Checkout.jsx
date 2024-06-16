@@ -5,6 +5,8 @@ import '../styles/checkout.css'
 import { Button, Input, Radio, RadioGroup, Stack } from "@chakra-ui/react"
 import { useNavigate } from "react-router-dom"
 import { Cart } from "./Cart"
+import { Header } from "./Header"
+import { Footer } from "./Footer"
 export function Checkout(){
     const checkoutOrder = ["info", "deli", "payment", "confirm"]
     const [totalAmount, setTotalAmount] = useState(0)
@@ -79,8 +81,10 @@ export function Checkout(){
     }
     return(
         <div className="checkout">
+            <Header/>
             <h1 className="checkout-title">Checkout</h1>
                 <div>
+
                 <div className="checkout-info" >
                     <div className="checkoutStatus">
                         <div style={{fontWeight:checkoutStatus >= 0 ? "700" :"400"}}>1. Information</div>
@@ -226,7 +230,7 @@ export function Checkout(){
                 </div>
             </div>}
             </div>
-            
+            <Footer/>
         </div>
     )
 }
