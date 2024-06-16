@@ -4,6 +4,8 @@ import Recommended from './Recommended';
 import Products from './Product';
 import { ProductCard } from '../ProductCard';
 import { useEffect } from 'react';
+import { Header } from '../Header';
+import { Footer } from '../Footer';
 
 
 const CatlogMain = () => {
@@ -80,8 +82,7 @@ const CatlogMain = () => {
       // console.log(filteredProducts);
       return filteredProducts.map(
         (item) => (
-          <ProductCard
-            item= {item}   key={item.id}/>
+          <ProductCard item= {item}  key={item.id}/>
         )
       );
     }
@@ -90,10 +91,15 @@ const CatlogMain = () => {
     const result = filteredData(products, selectedCategory, selectedPriceRange, query);
     return (
       <>
+        <div style={{backgroundColor:"#FFF8E9"}}>
+        <Header/>
         <Sidebar handleChange={handleChange} />
         {/* <Navigation query={query} handleInputChange={handleInputChange} /> */}
         <Recommended handleClick={handleClick} />
         <Products result={result} />
+        <Footer/>
+        </div>
+        
       </>
     );
 }
