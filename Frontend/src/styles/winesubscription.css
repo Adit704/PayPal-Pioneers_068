@@ -28,11 +28,17 @@
   border-radius: 5px;
   width: fit-content;
   padding: 1vh 2vw;
+  transition: transform 0.3s ease-in-out;
 }
 
 .landing_page_wine_subscription_title {
   font-size: 1.7rem;
   font-weight: bolder;
+  transition: transform 0.3s ease-in-out;
+}
+
+.landing_page_wine_subscription_title:hover, .landing_page_wine_subscription_link:hover {
+  transform: scale3d(1.1, 1.1, 1.1);
 }
 
 .landing_page_wine_subscription_description {
@@ -198,7 +204,7 @@
   }
 
   .landing_page_wine_subscription_title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .landing_page_wine_subscription_img {
@@ -206,7 +212,7 @@
   }
 
   .landing_page_wine_subscription_description{
-    font-size: 1.4rem;
+    font-size: 0.9rem;
   }
 
   .landing_page_wine_subscription_img_parent {

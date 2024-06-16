@@ -36,11 +36,19 @@
   font-size: 1.2rem;
   font-weight: bold;
   margin: 2vh 0;
+  transition: transform 0.3s ease-in-out;
+  mix-blend-mode: darken;
 }
 
 .landing_page_footer_children {
   font-size: 0.9rem;
   margin: 0.3rem 0;
+  transition: transform 0.3s ease-in-out;
+  mix-blend-mode: darken;
+}
+
+.landing_page_footer_children:hover, .landing_page_footer_titles:hover {
+  transform: scale3d(1.1, 1.1, 1.1);
 }
 
 .landing_page_footer_newsletter_child {
@@ -66,6 +74,15 @@
   margin: 1rem 0;
   font-size: 1rem;
   font-weight: bold;
+
+  p{
+    transition: transform 0.3s ease-in-out;
+    mix-blend-mode: darken;
+  }
+
+  p:hover{
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
 }
 
 @media screen and (max-width: 431px) {

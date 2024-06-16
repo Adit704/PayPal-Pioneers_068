@@ -15,7 +15,6 @@ export const ProductCard = ({item}) => {
     const navigate = useNavigate();
 
     const {img : image, newPrice : price, title, id,country, rating, color, type} = item;
-    console.log(item)
 
     const handleAdd = () => {
         const updatedData = [...data, item]
@@ -23,7 +22,6 @@ export const ProductCard = ({item}) => {
         setIsClicked(true);
         console.log(item);
     }
-    console.log(data);
 
     useEffect(() => {
         localStorage.setItem("WishListData", JSON.stringify(data));

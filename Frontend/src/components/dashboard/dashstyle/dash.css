@@ -87,8 +87,9 @@ body {
   grid-area: sidebar;
   height: 100%;
   position: fixed;
-  background-color: #263043;
+  background-color: #FFF8E9; 
   /* overflow-y: auto; */
+  border: 1px solid ;
   transition: all 0.5s;
   z-index: 10;
 }
