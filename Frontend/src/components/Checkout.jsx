@@ -80,7 +80,7 @@ export function Checkout(){
     return(
         <div className="checkout">
             <h1 className="checkout-title">Checkout</h1>
-            { checkoutStatus < 4 && <div>
+                <div>
                 <div className="checkout-info" >
                     <div className="checkoutStatus">
                         <div style={{fontWeight:checkoutStatus >= 0 ? "700" :"400"}}>1. Information</div>
@@ -216,16 +216,17 @@ export function Checkout(){
                 </div>
                 </div>
                 </div>
-            </div>}
-            {checkoutStatus == 4 && <div className="thank-you">
-                <img src="../assets/exitPage.png" alt="" />
+                {checkoutStatus == 4 &&  <div className="thank-you">
+                <img src="src/assets/exitPage.png" alt="" />
                 <div>
                     <h2>Thank you for your purchase!</h2>
                     <div>Your order number is <b>3357</b></div>
                     <div>You can find details in a confirmation mail or your account</div>
-                    <Button onClick={()=>{navigate("/")}}>Continue shopping</Button>
+                    <Button colorScheme="red" onClick={()=>{navigate("/")}}>Continue shopping</Button>
                 </div>
-            </div> }
+            </div>}
+            </div>
+            
         </div>
     )
 }
