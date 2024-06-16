@@ -33,10 +33,11 @@ export const ProductCard = ({item}) => {
     }
 
     const handleAddToCart = () =>{
-        let obj = JSON.parse(localStorage.getItem("wineCart"));
+        let obj = JSON.parse(localStorage.getItem("wineCart")) ||{};
         obj[id] = 1; 
         localStorage.setItem("wineCart",JSON.stringify(obj));
         dispatch({type:"REFRESH_CART"})
+        
     }
 
 
