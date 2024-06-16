@@ -35,7 +35,7 @@ export const Header = () => {
 
   useEffect(() => {
     const foundProduct = products.some((product) =>
-      product.category.toLowerCase().includes(search.toLowerCase())
+      product.category.toLowerCase().includes(search.toLowerCase())&&search.length>0
     );
     setIsProduct(foundProduct);
   }, [products, search]);
