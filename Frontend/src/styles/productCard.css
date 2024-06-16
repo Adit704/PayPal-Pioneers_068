@@ -108,6 +108,7 @@
   background-color: #BF0D12;
   border-radius: 7px;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 @media (min-width: 600px) {
@@ -171,7 +172,11 @@
   .product-cart-button {
     font-size: 1.125rem; 
     padding: 10px 15px;
+    
   }
-}
+  }
+  .product-cart-button:hover{
+    background-color:red;
+  }
 
 

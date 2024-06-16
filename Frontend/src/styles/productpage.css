@@ -177,16 +177,25 @@
   }
   .productpage-addtocart-container > p:nth-child(2){
     font-family: "PT Mono", monospace;
-    background-color: rgb(191, 13, 18);
+    background-color: #BF0D12;
     color: white;
     font-weight: 700;
     padding: 11px 50px 11px 50px;
+    cursor: pointer;
+  }
+  .productpage-addtocart-container > p:nth-child(2):hover{
+    background-color:red;
   }
   .productpage-addtocart-container > p:nth-child(3){
     font-family: "PT Mono", monospace;
     border: 1.5px solid rgb(45, 45, 45);
     font-weight: 700;
     padding: 11px 50px 11px 50px;
+    cursor: pointer;
+  }
+  .productpage-addtocart-container > p:nth-child(3):hover{
+    background-color: red;
+    color: white;
   }
   .productpage-bottom-container{
     font-family: "Nunito", sans-serif;
