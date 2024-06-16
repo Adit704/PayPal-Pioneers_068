@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { Link, useNavigate } from "react-router-dom";
 import { ProductSuggstion } from './ProductSuggstion';
 import { ProductReview } from './ProductReview';
+import { useToast } from '@chakra-ui/react';
 
 export const ProductPage = () => {
     const[item, setItem] = useState({});
@@ -13,6 +14,7 @@ export const ProductPage = () => {
     const product_id = localStorage.getItem("currentCard");
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const toast = useToast();
     useEffect(() => {
        const fetchData = async () => {
         isLoading(true);
@@ -45,6 +47,11 @@ export const ProductPage = () => {
         obj[product_id] = 1; 
         localStorage.setItem("wineCart",JSON.stringify(obj));
         dispatch({type:"REFRESH_CART"})
+        toast({
+            title:"Product added to cart",
+            status: 'success',
+            duration: 2000,
+        })
     }
 
     console.log(item);
