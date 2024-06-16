@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 export const LandingPageCards = () => {
   const navigate = useNavigate();
   const handleCards = () => {
-     navigate("/productpage");
+     navigate("/catlog");
   }
   return (
     <>
