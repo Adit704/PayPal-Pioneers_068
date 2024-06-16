@@ -46,8 +46,14 @@
   border-style: none;
   border-radius: 5px;
   font-size: 1.5rem;
-  padding: 1.1vh 1vw;
+  padding: 0.6vh 1vw;
   box-shadow: 2px 5px 8px 1px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  background-color: #f44336;
+  color: white;
+}
+.landing_page_header_search_btn:hover{
+  background-color: red;
 }
 
 .landing_page_header_icons {
