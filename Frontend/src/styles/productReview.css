@@ -1,0 +1,114 @@
+form {
+    font-family: "PT Mono", monospace;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #faeed9;
+  }
+  .Review-header {
+    font-family: "PT Mono", monospace;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10px;
+    font-weight: 600;
+  }
+  
+  input.user-name-input,
+  textarea.feedback-text {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: "PT Mono", monospace;
+  }
+  
+  textarea.feedback-text {
+    height: 100px;
+  }
+  
+  .rating-star {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+    margin: 10px 0;
+  }
+  
+  .rating-star i {
+    font-size: 24px;
+    color: gray;
+    cursor: pointer;
+  }
+  
+  .rating-star i:hover,
+  .rating-star i.active {
+    color: #FFD43B;
+  }
+  
+  button.review-button {
+    margin: auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button.review-button:hover {
+    background-color: #333;
+  }
+  
+  .review-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .review-button:hover {
+    background-color: #444;
+  }
+  
+  .review-border {
+    border-bottom: 0.5px solid rgb(90, 88, 88);
+  }
+  .input-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 14vh;
+    border-bottom:1px solid rgb(102, 102, 102) ;
+    padding: 0px 20px 0px 20px;
+  }
+  .reviewusername{
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .like-and-dislike{
+    display: flex;
+    gap: 10px;
+  }
+.like-and-dislike > span {
+    border: 1px solid rgb(59, 59, 59);
+    padding: 5px 20px 5px 20px;
+}
+.review-helpful {
+    color: rgb(124, 124, 124);
+    font-size: 14px;
+}
+.click-color {
+    color: red;
+}
+.like-icon{
+    color: gray;
+}

@@ -11,6 +11,13 @@
     padding: 10px;
     margin: 0 auto; 
   }
+  .page-loading-head {
+    font-size: 38px;
+    color: rgb(73, 73, 73);
+    text-align: center;
+    margin: auto;
+    margin-top: 50vh;
+  }
   .product-page-navbar{
     display: flex;
     align-items: center;
@@ -179,7 +186,7 @@
     font-weight: 700;
     padding: 11px 50px 11px 50px;
   }
-  .productpage-bootom-container{
+  .productpage-bottom-container{
     font-family: "Nunito", sans-serif;
     font-weight: 600;
     padding: 40px;
@@ -188,7 +195,7 @@
    justify-content: space-between;
     text-align: center;
   }
-  .productpage-bootom-container > span {
+  .productpage-bottom-container > span {
     width: 15%;
     color: rgb(53, 53, 53);
   }

@@ -4,6 +4,8 @@ import '../styles/wishlist.css';
 export const WishList = () => {
     const [productData, setProductData] = useState([]);
 
+
+    
     useEffect(() => {
         const data = localStorage.getItem("WishListData");
         if (data) {
