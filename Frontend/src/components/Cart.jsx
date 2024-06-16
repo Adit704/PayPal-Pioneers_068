@@ -1,14 +1,17 @@
 import { useEffect, useMemo, useState } from "react"
 import '../styles/Cart.css'
 import { CartCard } from "./CartCard"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { Button, Switch } from "@chakra-ui/react"
 import { ProductCard } from "./ProductCard"
+import { useNavigate } from "react-router-dom"
 export function Cart({visible, cartToggle}){
     
     const [totalAmount, setTotalAmount] = useState(0)
     const [newTotalAmount, setNewTotalAmount] = useState(0)
-    const [toggleRender, setToggleRender ] = useState(false);
+    const toggleRender = useSelector(state => state.refresh)
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     // console.log(visible);
 
     let product = useSelector(state => state.products)
@@ -44,7 +47,7 @@ export function Cart({visible, cartToggle}){
             return acc;
             },{})
         localStorage.setItem("wineCart",JSON.stringify(newCardDetails));
-        setToggleRender(prev => !prev);
+        dispatch({type:"REFRESH_CART"})
     }
 
     function decreaseQuantity(id){
@@ -59,7 +62,7 @@ export function Cart({visible, cartToggle}){
             return acc;
             },{})
         localStorage.setItem("wineCart",JSON.stringify(newCardDetails));
-        setToggleRender(prev => !prev);
+        dispatch({type:"REFRESH_CART"})
     }
     function increaseQuantity(id){
         let cardDetails = JSON.parse(localStorage.getItem("wineCart"));
@@ -73,7 +76,7 @@ export function Cart({visible, cartToggle}){
             return acc;
             },{})
         localStorage.setItem("wineCart",JSON.stringify(newCardDetails));
-        setToggleRender(prev => !prev);
+        dispatch({type:"REFRESH_CART"})
     }
     return (
     <div className="cart" style={{display:visible}}>
@@ -122,7 +125,7 @@ export function Cart({visible, cartToggle}){
             </div>
         </div>
             
-        <Button colorScheme="red" className="checkout-button" >Checkout</Button>
+        <Button onClick={()=>{navigate("/checkout")}} colorScheme="red" className="checkout-button" >Checkout</Button>
         {product.status == "success" && <div>
             <div className="mayLike-text">You may like</div>
             <div className="recommend-cards">

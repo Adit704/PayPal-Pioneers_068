@@ -1,15 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=PT+Mono&display=swap');
+
+.checkout{
+    padding: 30px;
+    background-color: #FFF8E9;
+    min-height: 100vh;
+}
+.checkout>div{
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.checkout-title{
+    font-family: "PT Mono", monospace;
+    font-size: 40px;
+    font-weight: 900;
+    margin-left: 40px;
+}
 .your-cart{
-    font-family: "PT Mono", monospace;;
+    font-family: "PT Mono", monospace;
     font-weight: bold;
     color: #1e1e1e;
  
     /* max-width: 800px; */
-    width: 600px;
-    min-width: 400px;
+    min-width: 500px;
     margin: auto;
     border: 1px solid;
-    padding: 10px 3rem;
-    height: 100vh;
+    padding: 20px 3rem;
+  
     box-sizing: border-box;
-    overflow: scroll;
+  
+}
+.checkout-total{
+    margin: 20px 0;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 1px solid ;
+}
+.checkout-total>div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.checkout-info{
+    width: 60%;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.checkoutStatus{
+    display: flex; 
+    gap: 30px;
+    font-size: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.confirm-details>div{
+    border-bottom:2px solid ;
+    padding: 10px 0;
+}
+.confirm-details>h3{
+    font-size: 30px;
+    font-weight: 700;
+}
+.confirm-details>div>div:first-child{
+    font-size: 20px;
+    font-weight: 700;
+}
+.checkout-form>div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.thank-you{
+
+    border: 1px solid;
+    min-width: 200px;
+    min-height: 100px;
+    width: 50%;
+    height: 400px;
+    position: fixed;
+    top: 25%;
+    right: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #FFF8E9;
+
+    
+}
+.thank-you>img{
+    width: 40%;
+    height: 100%;
+}
+.thank-you h2{
+    margin: 10px 0px;
+    font-size: 25px;
+    font-weight: 600;
+}
+.thank-you>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 60%;
+    box-sizing: border-box;
+    padding: 25px;
+}
+@media (max-width:800px) {
+    .checkout-info{
+        width: 100%;
+
+    }
+    .thank-you{
+        width: 100% !important;
+        /* top: 0 !important; */
+        right: 0 !important;
+    }
 }

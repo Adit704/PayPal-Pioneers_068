@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#landing_page_combination_cards {
+  width: 80%;
+  margin: 3vh auto 10vh auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+ #landing_page_combination_cards > div {
+  width:25%;
+  height: 515px;
+}
+
+#landing_page_combination_card_titles {
+  display: flex;
+  margin-left: 10vw;
+  column-gap: 2vw;
+  margin-top: 10vh;
+  
+}
+
+#landing_page_combination_card_titles div{
+  font-weight: bold;
+  font-size: 1.5rem;
+  border: 1px solid black;
+  padding: 0.1rem 0.5rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#landing_page_combination_card_titles div:hover{
+transform: scale3d(1.1, 1.1, 1.1);
+}

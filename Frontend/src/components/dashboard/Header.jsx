@@ -26,7 +26,7 @@ export const Header = ({ OpenSidebar, onSearch }) => {
             className='search-input'
             style={{ padding: '8px', marginRight: '10px', border: '1px solid #ccc', borderRadius: '5px', fontSize: '16px', color: '#333', backgroundColor: '#fff' }}
           />
-          <button type='submit' className='search-button' style={{ padding: '8px 12px', border: 'none', backgroundColor: '#2962ff', color: '#fff', borderRadius: '5px', cursor: 'pointer' }}>
+          <button type='submit' className='search-button' style={{ padding: '8px 12px', border: '1px solid', color: 'black', borderRadius: '5px', cursor: 'pointer', marginLeft:"10px", backgroundColor:"white"}}>
             <BsSearch className='icon' style={{ fontSize: '20px' }} />
           </button>
         </form>

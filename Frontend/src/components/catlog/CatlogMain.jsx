@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import Sidebar from './Sidebar';
 import Recommended from './Recommended';
 import Products from './Product';
@@ -13,6 +13,8 @@ const CatlogMain = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedPriceRange, setSelectedPriceRange] = useState('');
     const [query, setQuery] = useState('');
+
+ 
   
     useEffect(() => {
       fetch('https://paypal-pioneers-068.onrender.com/Products')
@@ -70,6 +72,8 @@ const CatlogMain = () => {
             title === selectedCategory
         );
       }
+
+  
   
       if (selectedPriceRange) {
         filteredProducts = filterByPriceRange(filteredProducts, selectedPriceRange);
@@ -82,9 +86,9 @@ const CatlogMain = () => {
         )
       );
     }
+
   
     const result = filteredData(products, selectedCategory, selectedPriceRange, query);
-  
     return (
       <>
         <Header/>
