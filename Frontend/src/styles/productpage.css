@@ -4,6 +4,9 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Overpass:ital,wght@0,100..900;1,100..900&family=PT+Mono&display=swap');
 .product-main-page-container {
   background-color: #FFF8E9;
+  width: 100%;
+  max-width: 1920px;
+  margin: auto;
 }
 .productpage-right-container{
     width: 70%;

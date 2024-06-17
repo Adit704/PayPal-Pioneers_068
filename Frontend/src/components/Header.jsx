@@ -18,6 +18,7 @@ export const Header = () => {
   const productsData = useSelector((state) => state.products);
   const products = productsData?.data ?? [];
   const [isProduct, setIsProduct] = useState(false);
+  const [reRender, setReRender] = useState(false);
 
   const handleSearchChange = useCallback((e) => {
     setSearch(e.target.value);
@@ -74,14 +75,16 @@ export const Header = () => {
           <div className="landing_page_header_icons">
             <div className="landing_page_header_login">
               <div className="landing_page_header_login_dropdown_parent">
-                <FontAwesomeIcon
+                {!localStorage.getItem("user") && <FontAwesomeIcon
                   className="landing_page_header_icons_children"
                   icon={faUser}
-                />
+                  />}
+                {localStorage.getItem("user") && <div>{JSON.parse(localStorage.getItem("user")).name}</div> }
               </div>
+                
 
               <div className="landing_page_header_icons_login_dropdown">
-                <div className="landing_page_header_icons_login_dropdown_children">
+                {!localStorage.getItem("user") && <div className="landing_page_header_icons_login_dropdown_children">
                   <Link to="/login">
                     {" "}
                     <p>Log In</p>
@@ -90,7 +93,14 @@ export const Header = () => {
                     {" "}
                     <p>Sign Up</p>
                   </Link>
-                </div>
+                </div>}
+                {localStorage.getItem("user") &&  <div className="landing_page_header_icons_login_dropdown_children">
+                  {JSON.parse(localStorage.getItem("user")).role == "admin" && <p ><Link to='/dashboard'>Admin board</Link></p> }
+                  <p onClick={()=>{
+                    localStorage.removeItem("user");
+                    setReRender(prev =>!prev);
+                  }} ><Link>Sign out</Link></p>
+                   </div>}
               </div>
             </div>
 

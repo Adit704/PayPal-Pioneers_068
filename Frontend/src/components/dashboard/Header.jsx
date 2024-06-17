@@ -34,7 +34,38 @@ export const Header = ({ OpenSidebar, onSearch }) => {
       <div className='header-right' style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
         <BsFillBellFill className='icon' style={{ fontSize: '24px', cursor: 'pointer' }} />
         <BsFillEnvelopeFill className='icon' style={{ fontSize: '24px', cursor: 'pointer' }} />
-        <Link to='/login'><BsPersonCircle className='icon' style={{ fontSize: '24px', cursor: 'pointer' }} /> </Link>
+        <div className="landing_page_header_login">
+              <div className="landing_page_header_login_dropdown_parent">
+                {!localStorage.getItem("user") && <FontAwesomeIcon
+                  style={{color:"white"}}
+                  className="landing_page_header_icons_children"
+                  icon={faUser}
+                  />}
+                {localStorage.getItem("user") && <div style={{color:"white"}}>{JSON.parse(localStorage.getItem("user")).name}</div> }
+              </div>
+                
+
+              <div className="landing_page_header_icons_login_dropdown">
+                {!localStorage.getItem("user") && <div className="landing_page_header_icons_login_dropdown_children">
+                  <Link to="/login">
+                    {" "}
+                    <p>Log In</p>
+                  </Link>
+                  <Link to="/register">
+                    {" "}
+                    <p>Sign Up</p>
+                  </Link>
+                </div>}
+                {localStorage.getItem("user") &&  <div className="landing_page_header_icons_login_dropdown_children">
+                  <p><Link to="/">Main Page</Link></p>
+                  <p onClick={()=>{
+                    localStorage.removeItem("user");
+                    setReRender(prev =>!prev);
+                  }} ><Link to='/login'>Sign out</Link></p>
+                   </div>}
+              </div>
+            </div>
+        {/* <BsPersonCircle className='icon' style={{ fontSize: '24px', cursor: 'pointer' }} />  */}
       </div>
     </header>
   );
