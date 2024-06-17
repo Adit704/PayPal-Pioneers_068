@@ -97,7 +97,7 @@ const CatlogMain = () => {
         {/* <Navigation query={query} handleInputChange={handleInputChange} /> */}
         <div style={{width:"80%", padding:"30px"}}>
         <Recommended handleClick={handleClick} />
-        {productsData.status == "inprogress" && <h3>Loading....</h3> }
+        {productsData.status == "inprogress" && <h3 style={{fontSize:"20px", textAlign: "center" ,fontWeight:"700", margin:"100px"}}>Loading....</h3> }
         <Products result={result} />
         </div>
         </div>
