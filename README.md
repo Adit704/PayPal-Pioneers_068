@@ -87,21 +87,22 @@ A
 ## Screenshots
 
 ### Desktop view
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-4.png)
-![alt text](image-5.png)
-![alt text](image-6.png)
-![alt text](image-7.png)
-![alt text](image-8.png)
+![alt text](Frontend/src/assets/image.png)
+![alt text](Frontend/src/assets/image-1.png)
+![alt text](Frontend/src/assets/image-2.png)
+![alt text](Frontend/src/assets/image-4.png)
+![alt text](Frontend/src/assets/image-5.png)
+![alt text](Frontend/src/assets/image-6.png)
+![alt text](Frontend/src/assets/image-7.png)
+![alt text](Frontend/src/assets/image-8.png)
 
 ### Mobile view
-![alt text](image-9.png)
-![alt text](image-10.png)
-![alt text](image-13.png)
-![alt text](image-11.png)
-![alt text](image-12.png)
+![alt text](Frontend/src/assets/image-9.png)
+![alt text](Frontend/src/assets/image-10.png)
+![alt text](Frontend/src/assets/image-13.png)
+![alt text](Frontend/src/assets/image-11.png)
+![alt text](Frontend/src/assets/image-12.png)
+![alt text](Frontend/src/assets/image-14.png)
 
 ## API Used/Endpoints
 
