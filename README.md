@@ -1,4 +1,4 @@
-# PayPal Pioneers_068
+# Thirsty Wine
 
 ## Introduction
  A web application designed to cater to wine enthusiasts, offering them a platform to discover a wide array of wines, delve into their unique characteristics, and exchange insights and experiences. Users can seamlessly browse through diverse wines, access comprehensive details about each selection, and engage with fellow enthusiasts through comments and ratings. Additionally, the platform incorporates user-friendly features such as a shopping cart function, wishlist, catalogue , and robust authentication mechanisms for signup and login and also and an admin page.
@@ -76,11 +76,11 @@ https://youtu.be/3rAc2uPaI50
 
 ## How to Use/Run
 To run this project you need to have node packet manager ```npm``` From more [info](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-A
 1. Clone this repository to your local machine.
 2. Go inside the Frontend directory and do ```npm install```
 3. Install other dependencies ```npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion axios react-redux recharts redux redux-thunk```
 4. After installation dependency type ```npm run dev``` or ```vite```
+5. Explore the Thirsty Wine website  experience right from your device.
 
 
 
