@@ -75,7 +75,7 @@ https://youtu.be/3rAc2uPaI50
 
 
 ## How to Use/Run
-To run this project you need to node packet manager ```npm``` From more [info](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+To run this project you need to have node packet manager ```npm``` From more [info](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 A
 1. Clone this repository to your local machine.
 2. Go inside the Frontend directory and do ```npm install```
