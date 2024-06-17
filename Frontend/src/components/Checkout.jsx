@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom"
 import { Cart } from "./Cart"
 import { Header } from "./Header"
 import { Footer } from "./Footer"
+import exitImg from "../assets/exitPage.png"
 export function Checkout(){
     const checkoutOrder = ["info", "deli", "payment", "confirm"]
     const [totalAmount, setTotalAmount] = useState(0)
@@ -69,6 +70,9 @@ export function Checkout(){
         e.preventDefault();
         if(checkoutStatus >= 3){
             setCheckoutStatus(prev => prev+1);
+            if(checkoutStatus == 4){
+                localStorage.removeItem("cartWine");
+            }
 
         }
         else{
@@ -221,7 +225,7 @@ export function Checkout(){
                 </div>
                 </div>
                 {checkoutStatus == 4 &&  <div className="thank-you">
-                <img src="src/assets/exitPage.png" alt="" />
+                <img src={exitImg} alt="" />
                 <div>
                     <h2>Thank you for your purchase!</h2>
                     <div>Your order number is <b>3357</b></div>
