@@ -6,9 +6,11 @@ import { ProductCard } from '../ProductCard';
 import { useEffect } from 'react';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
+import { useSelector } from 'react-redux';
 
 
 const CatlogMain = () => {
+    const productsData = useSelector(state => state.products);
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedPriceRange, setSelectedPriceRange] = useState('');
@@ -17,11 +19,8 @@ const CatlogMain = () => {
  
   
     useEffect(() => {
-      fetch('https://paypal-pioneers-068.onrender.com/Products')
-        .then((response) => response.json())
-        .then((data) => setProducts(data))
-        .catch((error) => console.error('Error fetching data:', error));
-    }, []);
+      setProducts(productsData.data);
+    }, [productsData.status]);
   
     const handleInputChange = (event) => {
       setQuery(event.target.value);
@@ -91,12 +90,17 @@ const CatlogMain = () => {
     const result = filteredData(products, selectedCategory, selectedPriceRange, query);
     return (
       <>
-        <div style={{backgroundColor:"#FFF8E9"}}>
+        <div style={{backgroundColor:"#FFF8E9", minWidth:"470px"}}>
         <Header/>
+        <div style={{display:"flex"}}>
         <Sidebar handleChange={handleChange} />
         {/* <Navigation query={query} handleInputChange={handleInputChange} /> */}
+        <div style={{width:"80%", padding:"30px"}}>
         <Recommended handleClick={handleClick} />
+        {productsData.status == "inprogress" && <h3>Loading....</h3> }
         <Products result={result} />
+        </div>
+        </div>
         <Footer/>
         </div>
         

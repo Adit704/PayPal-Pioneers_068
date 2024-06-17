@@ -97,7 +97,7 @@
 }
 .thank-you h2{
     margin: 10px 0px;
-    font-size: 25px;
+    font-size: 1.3em;
     font-weight: 600;
 }
 .thank-you>div{
@@ -109,6 +109,9 @@
     width: 60%;
     box-sizing: border-box;
     padding: 25px;
+}
+.thankyou-details>div{
+    font-size: 0.9rem;
 }
 @media (max-width:800px) {
     .checkout-info{

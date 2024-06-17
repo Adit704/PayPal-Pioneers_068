@@ -70,9 +70,7 @@ export function Checkout(){
         e.preventDefault();
         if(checkoutStatus >= 3){
             setCheckoutStatus(prev => prev+1);
-            if(checkoutStatus == 4){
-                localStorage.removeItem("cartWine");
-            }
+            
 
         }
         else{
@@ -82,6 +80,9 @@ export function Checkout(){
             setInputRef([]);
             }
         console.log(input);
+    }
+    if(checkoutStatus == 4){
+        localStorage.removeItem("wineCart");
     }
     return(
         <div className="checkout">
@@ -125,12 +126,12 @@ export function Checkout(){
                                 </div>
                                 <div style={{width:"45%",minWidth:"300px"}}>
                                     <label htmlFor="">Last name</label>
-                                    <Input  ref={(e)=>{inputRef[1] = e}} border={"1px solid"} required/>
+                                    <Input  ref={(e)=>{inputRef[1] = e}} border={"1px solid"} />
                                 </div>
                             </div>
                                 <div>
                                     <label htmlFor="">Phone number</label>
-                                    <Input ref={(e)=>{inputRef[2] = e}} border={"1px solid"} required/>
+                                    <Input type="number" ref={(e)=>{inputRef[2] = e}} border={"1px solid"} required/>
                                 </div>
                                 <div>
                                     <label htmlFor="">Email address</label>
@@ -226,7 +227,7 @@ export function Checkout(){
                 </div>
                 {checkoutStatus == 4 &&  <div className="thank-you">
                 <img src={exitImg} alt="" />
-                <div>
+                <div className="thankyou-details">
                     <h2>Thank you for your purchase!</h2>
                     <div>Your order number is <b>3357</b></div>
                     <div>You can find details in a confirmation mail or your account</div>
