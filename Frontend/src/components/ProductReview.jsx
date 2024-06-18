@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/productReview.css'
+import { useNavigate } from 'react-router-dom';
 
 export const ProductReview = () => {
   const [nameInput, setNameInput] = useState("");
@@ -7,7 +8,7 @@ export const ProductReview = () => {
   const [rating, setRating] = useState(0);
   const [reviews, setReviews] = useState([]);
   const [isClicked, setIscliked] = useState(false)
-
+  const navigate = useNavigate();
 
   const handleUserName = (e) => {
     setNameInput(e.target.value);
@@ -59,7 +60,8 @@ export const ProductReview = () => {
             </span>
           ))}
         </div>
-        <button type="submit" className='review-button'>Submit</button>
+        { localStorage.getItem("user") && <button type="submit" className='review-button'>Submit</button>}
+        {!localStorage.getItem("user") && <button onClick={()=>{navigate("/login")}} className='review-button'>Logged in first</button> }
       </form>
       <div className="reviews-container">
         <div className='review-border'></div>
