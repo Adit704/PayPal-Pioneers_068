@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { addToWishlist } from './wishlistFunctions'; 
@@ -7,40 +7,66 @@ import { useToast } from '@chakra-ui/react';
 
 export const ProductCard = ({ item }) => {
     const [isClicked, setIsClicked] = useState(false);
-    console.log(isClicked);
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const toast = useToast();
     const { img: image, newPrice: price, title, id, country, rating, color, type } = item;
 
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (user && user.wishlist && user.wishlist.includes(id)) {
+            setIsClicked(true);
+        }
+    }, [id]);
+
     const handleAdd = async () => {
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (!user) {
+            toast({title:"Login Required.", description:"Please login before to add item on wishlist", duration:1000, isClosable:true , status:"warning"});
+
+            
+            return;
+        }
+        await addToWishlist(id);
+        setIsClicked(true);
+        toast({
+            title: "Added to wishlist",
+            status: 'success',
+            duration: 2000,
+        });
+    };
+
+    const handleRemove = async () => {
         const user = JSON.parse(localStorage.getItem("user"));
         if (!user) {
             alert("Please log in first.");
             return;
         }
-        
-
-            setIsClicked(true);
+        await removeFromWishlist(id);
+        setIsClicked(false);
+        toast({
+            title: "Removed from wishlist",
+            status: 'success',
+            duration: 2000,
+        });
     };
-    
-    const toast = useToast();
 
     const handleClick = () => {
         localStorage.setItem("currentCard", id);
         navigate('/productpage');
     };
 
-    const handleAddToCart = () =>{
-        let obj = JSON.parse(localStorage.getItem("wineCart")) ||{};
-        obj[id] = 1; 
-        localStorage.setItem("wineCart",JSON.stringify(obj));
-        dispatch({type:"REFRESH_CART"})
+    const handleAddToCart = () => {
+        let obj = JSON.parse(localStorage.getItem("wineCart")) || {};
+        obj[id] = 1;
+        localStorage.setItem("wineCart", JSON.stringify(obj));
+        dispatch({ type: "REFRESH_CART" });
         toast({
-            title:"Product added to cart",
+            title: "Product added to cart",
             status: 'success',
             duration: 2000,
-        })
-    }
+        });
+    };
 
     return (
         <div className='product-card-container'>
@@ -51,12 +77,11 @@ export const ProductCard = ({ item }) => {
                 </div>
                 <div className='product-icon'>
                     <span><i className="fas fa-balance-scale legal-icon"></i></span>
-                    <span onClick={handleAdd}>
-                        {!isClicked && <i className={`fa-regular fa-heart heart-icon`} ></i>}
-                        {isClicked && <i className="fa-solid fa-heart" style={{color: "#bf0d12"}}></i>}
+                    <span onClick={isClicked ? handleRemove : handleAdd}>
+                        {!isClicked && <i className="fa-regular fa-heart heart-icon" ></i>}
+                        {isClicked && <i className="fa-solid fa-heart" style={{ color: "#bf0d12" }}></i>}
                     </span>
                 </div>
-            </div>
             <div onClick={handleClick} className="card-main-section">
                 <div className='product-image-container'>
                     <img src={image} alt="wine bottle" style={{ mixBlendMode: "multiply" }} className='product-image' />
@@ -76,5 +101,7 @@ export const ProductCard = ({ item }) => {
                 <span onClick={handleAddToCart} className='product-cart-button'>&#43;</span>
             </div>
         </div>
+        </div>
     );
 };
+

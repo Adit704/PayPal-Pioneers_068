@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { removeFromWishlist } from './wishlistFunctions'; 
 import '../styles/wishlist.css';
+import { useDispatch } from 'react-redux';
+import { useToast } from '@chakra-ui/react';
+import { Header } from './Header';
+import { Footer } from './Footer';
 
 export const WishList = () => {
     const [productData, setProductData] = useState([]);
-
+    const dispatch = useDispatch();
+    const toast = useToast();
     useEffect(() => {
         const fetchWishlist = async () => {
             const user = JSON.parse(localStorage.getItem("user"));
@@ -23,8 +28,20 @@ export const WishList = () => {
         setProductData(prev => prev.filter(product => product.id !== id));
     };
 
+    const handleAddToCart = (id) => {
+        let obj = JSON.parse(localStorage.getItem("wineCart")) || {};
+        obj[id] = 1;
+        localStorage.setItem("wineCart", JSON.stringify(obj));
+        dispatch({ type: "REFRESH_CART" });
+        toast({
+            title: "Product added to cart",
+            status: 'success',
+            duration: 2000,
+        });
+    };
     return (
         <div className='wishlist-container'>
+            <Header/>
             <h1 className='wishlist-header'>Your WishList</h1>
             {productData.length > 0 ? (
                 productData.map((el) => (
@@ -38,7 +55,7 @@ export const WishList = () => {
                                 {el.newPrice}$
                             </div>
                             <div className='wishlist-card-buttons'>
-                                <button className='wishlist-card-button'>
+                                <button onClick={()=>{handleAddToCart(el.id)}} className='wishlist-card-button'>
                                     Add to Cart
                                 </button>
                                 <button
@@ -54,6 +71,7 @@ export const WishList = () => {
             ) : (
                 <p>No items in wishlist</p>
             )}
+            {/* <Footer/> */}
         </div>
     );
 };
