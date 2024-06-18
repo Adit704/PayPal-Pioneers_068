@@ -144,7 +144,6 @@ export const ProductPage = () => {
                                     <p>Not available. I want it</p>
                                 </div>
                             </div>
-                            {/* middle sec */}
                             <div className='productpage-addtocart-container'>
                                 <p>{item.newPrice}$</p>
                                 <p onClick={handleAddToCart}>Add to cart</p>
