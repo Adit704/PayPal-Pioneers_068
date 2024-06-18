@@ -10,7 +10,7 @@ export const Navbar = () => {
     <>
       <div id="landing_page_navbar">
         <div onClick={() => 
-          {dispatch({type:"COLOR", payload:"red"});
+          {dispatch({type:"COLOR", payload:"Red"});
           navigate("/catlog");}
         } className="landing_page_navbar_children">Red</div>
         <div className="landing_page_navbar_children" onClick={()=>{

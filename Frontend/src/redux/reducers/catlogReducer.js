@@ -3,7 +3,7 @@ export function catlogReducer(state = {search:"",  color:""}, {type, payload}){
         case "SEARCH":
             return {...state, search:payload}
         case "COLOR":
-            return {...state, color:""}
+            return {...state, color:payload}
         default :
             return state
     }
