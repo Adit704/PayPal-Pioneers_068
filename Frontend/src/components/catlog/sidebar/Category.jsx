@@ -1,4 +1,5 @@
 import "../../../styles/Category.css";
+import { Header } from "../../Header";
 import Input from "./Input";
 
 
@@ -37,6 +38,9 @@ function Category({ handleChange }) {
           name="test"
         />
       </div>
+      {/* <Header handleChange={handleChange} value={value}  /> */}
+         
+
     </div>
   );
 }

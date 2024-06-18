@@ -38,7 +38,7 @@ export const ProductReview = () => {
   return (
     <div>
       <h1 className='Review-header'>Review</h1>
-      <form onSubmit={handleSubmit}>
+      <form className='reviewForm' onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Enter your Name"

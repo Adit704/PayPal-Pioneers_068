@@ -1,11 +1,12 @@
 .recommended-flex {
     display: flex;
-    margin-left: 20rem;
+    flex-wrap: wrap;
   }
   
   .recommended-title {
-    margin-left: 20rem;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    font-family: "PT Mono", monospace;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
     font-size: 20px;
   }

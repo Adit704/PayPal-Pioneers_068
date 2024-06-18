@@ -1,14 +1,21 @@
 .sidebar {
-    width: 15%;
-    position: fixed;
-    height: 100vh;
-    overflow: scroll;
+    width: 20%;
+    min-width: 200px;
+    position: sticky;
+    /* height: 90vh; */
+    /* overflow: scroll; */
     border-right: 2px solid #e5e5e5;
     z-index: 3;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #FFF8E9;
+    /* padding: 100px; */
   }
+  .sidebar::-webkit-scrollbar{
+    background: transparent;
+    width: 1px;
+}
   
   .logo-container {
     margin-bottom: 4rem;

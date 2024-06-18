@@ -21,6 +21,12 @@
 
 .product-suggestion-on-productpage{
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:center;
+}
+.product-suggestion-on-productpage>div{
+    width: 330px;
 }
 
 .view-all-button{

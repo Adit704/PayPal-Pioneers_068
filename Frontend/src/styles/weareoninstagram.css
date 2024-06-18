@@ -21,6 +21,15 @@
   column-gap: 2vw;
 }
 
+.landing_page_we_are_on_instagram_img_parent{
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.landing_page_we_are_on_instagram_img_parent:hover{
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+
 .landing_page_we_are_on_instagram_img {
   width: 100%;
   height: 100%;
@@ -41,9 +50,24 @@
   }
 }
 
-@media screen and (mmin-width: 432px) and (max-width: 1024px) {
+@media screen and (min-width: 432px) and (max-width: 1024px) {
   .landing_page_we_are_on_instagram_cards {
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 3vw;
+    row-gap: 3vh;
+  }
+
+  .landing_page_we_are_on_instagram_img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+}
+
+
+@media screen and (min-width: 1025px)  {
+  .landing_page_we_are_on_instagram_cards {
+    grid-template-columns: repeat(4, 1fr);
     column-gap: 3vw;
     row-gap: 3vh;
   }

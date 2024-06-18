@@ -46,14 +46,19 @@
   border-style: none;
   border-radius: 5px;
   font-size: 1.5rem;
-  padding: 1.1vh 1vw;
+  padding: 0.6vh 1vw;
   box-shadow: 2px 5px 8px 1px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  background-color: #f44336;
+  color: white;
+}
+.landing_page_header_search_btn:hover{
+  background-color: red;
 }
 
 .landing_page_header_icons {
   display: flex;
-  justify-content: flex-end;
-  column-gap: 1vw;
+
 }
 
 .landing_page_header_login,
@@ -62,6 +67,11 @@
   color: green;
   border-radius: 5px;
   font-size: 2rem;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  font-size: 23px;
+  margin-top: 10px;
 }
 
 .landing_page_header_cart:hover,
@@ -87,15 +97,17 @@
 
 @media screen and (max-width: 431px) {
   #landing_page_header {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2,auto);
     height: auto;
   }
 
   .landing_page_header_search_parent_parent {
     width: 100%;
     display: flex;
+    flex-wrap: wrap-reverse;
     align-items: center;
-    justify-content: space-evenly;
+    gap: 30px;
   }
 
   .landing_page_header_search_parent {
@@ -120,16 +132,21 @@
   }
 
   .landing_page_header_logo_parent {
-    width: 40%;
-    margin-left: 0.5rem;
+    width: 70%;
+    margin: auto;
   }
 
   .landing_page_header_icons {
-    position: absolute;
-    top: 1vh;
-    right: 5vw;
+    width: 100%;
+    position: relative;
     font-size: 1.1rem;
+    justify-content: space-around;
   }
+  .landing_page_header_icons_login_dropdown{
+    transform: translate(70px);
+
+  }
+  
 }
 
 @media screen and (min-width: 432px) and (max-width: 1024px) {
@@ -178,6 +195,7 @@
     top: 2vh;
     right: 5vw;
     font-size: 1.1rem;
+    gap: 20px;
   }
 }
 
@@ -195,15 +213,16 @@
   .landing_page_header_icons {
     position: absolute;
     top: 2vh;
-    right: 1vw;
+    right: 2vw;
     font-size: 1.1rem;
-    column-gap: 1.5vw;
+    gap:30px
   }
 }
 
 .landing_page_header_icons_login_dropdown {
   position: absolute;
   display: none;
+  min-width: 100px;
 }
 
 .landing_page_header_login:hover .landing_page_header_icons_login_dropdown {

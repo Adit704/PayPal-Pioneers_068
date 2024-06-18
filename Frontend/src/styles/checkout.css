@@ -2,10 +2,16 @@
 
 .checkout{
     padding: 30px;
+    background-color: #FFF8E9;
+    min-height: 100vh;
 }
 .checkout>div{
     display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
 }
+
 .checkout-title{
     font-family: "PT Mono", monospace;
     font-size: 40px;
@@ -18,8 +24,7 @@
     color: #1e1e1e;
  
     /* max-width: 800px; */
-    width: 4%;
-    min-width: 500px;
+    min-width: 300px;
     margin: auto;
     border: 1px solid;
     padding: 20px 3rem;
@@ -41,7 +46,81 @@
     justify-content: space-between;
 }
 .checkout-info{
-    width: 70%;
+    width: 60%;
     padding: 40px;
     box-sizing: border-box;
+}
+
+.checkoutStatus{
+    display: flex; 
+    gap: 30px;
+    font-size: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.confirm-details>div{
+    border-bottom:2px solid ;
+    padding: 10px 0;
+}
+.confirm-details>h3{
+    font-size: 30px;
+    font-weight: 700;
+}
+.confirm-details>div>div:first-child{
+    font-size: 20px;
+    font-weight: 700;
+}
+.checkout-form>div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.thank-you{
+
+    border: 1px solid;
+    min-width: 200px;
+    min-height: 100px;
+    width: 50%;
+    height: 400px;
+    position: fixed;
+    top: 25%;
+    right: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #FFF8E9;
+
+    
+}
+.thank-you>img{
+    width: 40%;
+    height: 100%;
+}
+.thank-you h2{
+    margin: 10px 0px;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+.thank-you>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 60%;
+    box-sizing: border-box;
+    padding: 25px;
+}
+.thankyou-details>div{
+    font-size: 0.9rem;
+}
+@media (max-width:800px) {
+    .checkout-info{
+        width: 100%;
+
+    }
+    .thank-you{
+        width: 100% !important;
+        /* top: 0 !important; */
+        right: 0 !important;
+    }
 }

@@ -5,11 +5,13 @@ import { HeroCarausal } from "./HeroCarausal";
 import { LandingPageCards } from "./LandingPageCards";
 import { Slider } from "./Slider";
 import { SetAndGifts } from "./SetAndGifts";
-import '../styles/homepagedashboard.css';
+import "../styles/homepagedashboard.css";
 import { WineSubscription } from "./WineSubscription";
 import { BlogAndNews } from "./BlogAndNews";
 import { WeAreOnInstagram } from "./WeAreOnInstagram";
 import { Footer } from "./Footer";
+import { BestSellers } from "./BestSellers";
+
 
 export const HomePageDashBoard = () => {
   return (
@@ -21,10 +23,11 @@ export const HomePageDashBoard = () => {
         <LandingPageCards />
         <Slider />
         <SetAndGifts />
-        <WineSubscription/>
-        <BlogAndNews/>
-        <WeAreOnInstagram/>
-        <Footer/>
+        <WineSubscription />
+        <BestSellers/>        
+        <BlogAndNews />
+        <WeAreOnInstagram />
+        <Footer />
       </div>
     </>
   );

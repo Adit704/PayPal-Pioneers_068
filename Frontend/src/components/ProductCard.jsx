@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { addToWishlist } from './wishlistFunctions'; 
 import '../styles/productCard.css';
+import { useToast } from '@chakra-ui/react';
 
 export const ProductCard = ({ item }) => {
     const [isClicked, setIsClicked] = useState(false);
@@ -21,18 +22,25 @@ export const ProductCard = ({ item }) => {
 
             setIsClicked(true);
     };
+    
+    const toast = useToast();
 
     const handleClick = () => {
         localStorage.setItem("currentCard", id);
         navigate('/productpage');
     };
 
-    const handleAddToCart = () => {
-        let obj = JSON.parse(localStorage.getItem("wineCart")) || {};
-        obj[id] = 1;
-        localStorage.setItem("wineCart", JSON.stringify(obj));
-        dispatch({ type: "REFRESH_CART" });
-    };
+    const handleAddToCart = () =>{
+        let obj = JSON.parse(localStorage.getItem("wineCart")) ||{};
+        obj[id] = 1; 
+        localStorage.setItem("wineCart",JSON.stringify(obj));
+        dispatch({type:"REFRESH_CART"})
+        toast({
+            title:"Product added to cart",
+            status: 'success',
+            duration: 2000,
+        })
+    }
 
     return (
         <div className='product-card-container'>

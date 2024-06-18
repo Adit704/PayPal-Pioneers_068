@@ -6,6 +6,9 @@ import { useSelector } from 'react-redux';
 import { Link, useNavigate } from "react-router-dom";
 import { ProductSuggstion } from './ProductSuggstion';
 import { ProductReview } from './ProductReview';
+import { Header } from './Header';
+import { Footer } from './Footer';
+import { useToast } from '@chakra-ui/react';
 
 export const ProductPage = () => {
     const[item, setItem] = useState({});
@@ -13,6 +16,7 @@ export const ProductPage = () => {
     const product_id = localStorage.getItem("currentCard");
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const toast = useToast();
     useEffect(() => {
        const fetchData = async () => {
         isLoading(true);
@@ -45,6 +49,11 @@ export const ProductPage = () => {
         obj[product_id] = 1; 
         localStorage.setItem("wineCart",JSON.stringify(obj));
         dispatch({type:"REFRESH_CART"})
+        toast({
+            title:"Product added to cart",
+            status: 'success',
+            duration: 2000,
+        })
     }
 
     console.log(item);
@@ -55,12 +64,13 @@ export const ProductPage = () => {
                 <h1 className='page-loading-head'>Loading...</h1>
             ) : (
                 <>
-                    <div className='product-page-navbar'>
+                    <Header/>
+                    {/* <div className='product-page-navbar'>
                         <span onClick={handleHomeNavigate}>Home</span>
                         <span onClick={handleCatlogNav}>Catalog</span>
                         <span>Red Wine</span>
                         <p>{item.title}</p>
-                    </div>
+                    </div> */}
                     <div className='product-page-head'>
                         <h1>{item.title}</h1>
                     </div>
@@ -135,7 +145,7 @@ export const ProductPage = () => {
                                 </div>
                             </div>
                             <div className='productpage-addtocart-container'>
-                                <p>{item.Price}$</p>
+                                <p>{item.newPrice}$</p>
                                 <p onClick={handleAddToCart}>Add to cart</p>
                                 <p onClick={()=>{
                             handleAddToCart();
@@ -180,6 +190,7 @@ export const ProductPage = () => {
                     </div>
                     <ProductReview />
                     <ProductSuggstion />
+                    <Footer/>
                 </>
             )}
         </div>

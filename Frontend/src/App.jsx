@@ -14,6 +14,7 @@ import { DashBoard } from './components/dashboard/DashBoard';
 import { Product } from './components/dashboard/Product';
 import Login from './components/authentication/Login';
 import Register from './components/authentication/Register';
+import { PrivateRoute } from './components/PrivateRoute.jsx';
 function App() {
   const dispatch = useDispatch()
   useEffect(()=>{
@@ -21,14 +22,14 @@ function App() {
     }, [])
   return (
     <>
-  
+    
     <Routes>
         <Route path='/' element={<HomePageDashBoard />} />
         <Route path ='/checkout' element={<Checkout/>}/>
         <Route path="/productpage" element={<ProductPage />} />
         <Route path='/wishlist' element={<WishList />} />
         <Route path ='/catlog' element={<CatlogMain/>}/>
-        <Route path='/dashboard' element={<DashBoard />}/>
+        <Route path='/dashboard' element={<PrivateRoute><DashBoard /></PrivateRoute>}/>
         <Route path='/products' element={<Product/>} />
         <Route path='/login' element={<Login />}/>
         <Route path='/register' element={<Register />}/>
