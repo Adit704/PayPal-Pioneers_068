@@ -12,6 +12,7 @@ Fullstack
 
 
 ## Directory Structure
+```plaintext
 PayPal Pioneers/<br>
 ├─ Backend/<br>
 │ ├─...<br>
@@ -42,9 +43,10 @@ PayPal Pioneers/<br>
 │ │ │ │ ├─...<br>
 │ │ │ ├─...<br>
 │ │ ├─styles<br>
-│ │ │ ├─...<br>
+│ │ │ ├─...<be>
+│ │ ├─...<be>
 │ ├─...<br>
-
+```
 
 ## Video Walkthrough of the project
 https://youtu.be/3rAc2uPaI50
