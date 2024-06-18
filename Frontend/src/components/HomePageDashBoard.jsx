@@ -11,6 +11,7 @@ import { BlogAndNews } from "./BlogAndNews";
 import { WeAreOnInstagram } from "./WeAreOnInstagram";
 import { Footer } from "./Footer";
 import { BestSellers } from "./BestSellers";
+import { Link } from "react-router-dom";
 
 
 export const HomePageDashBoard = () => {
@@ -19,10 +20,10 @@ export const HomePageDashBoard = () => {
       <div id="landing_page_dashboard">
         <Header />
         <Navbar />
-        <HeroCarausal />
+        <Link to="/catlog"><HeroCarausal /></Link>
         <LandingPageCards />
         <Slider />
-        <SetAndGifts />
+        <Link to="/catlog"><SetAndGifts /></Link>
         <WineSubscription />
         <BestSellers/>        
         <BlogAndNews />

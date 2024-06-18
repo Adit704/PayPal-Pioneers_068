@@ -23,6 +23,9 @@ const CatlogMain = () => {
     useEffect(() => {
       setProducts(productsData.data);
     }, [productsData.status]);
+    useEffect(() => {
+      setSelectedColor(selectedColor.data);
+    }, [productsData.color]);
   
     const handleInputChange = (event) => {
       setQuery(event.target.value);
