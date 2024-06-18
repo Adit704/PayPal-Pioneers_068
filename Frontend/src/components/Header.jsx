@@ -10,15 +10,16 @@ import {
 import { Cart } from "./Cart";
 import { useCartDisplay } from "../hooks/cartDisplayHook";
 import { useNavigate, Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export const Header = () => {
+  const catlogStore = useSelector(state => state.catlog);
   const navigate = useNavigate();
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(catlogStore.search);
   const productsData = useSelector((state) => state.products);
   const products = productsData?.data ?? [];
-  const [isProduct, setIsProduct] = useState(false);
   const [reRender, setReRender] = useState(false);
+  const dispatch = useDispatch();
 
   const handleSearchChange = useCallback((e) => {
     setSearch(e.target.value);
@@ -29,17 +30,13 @@ export const Header = () => {
   }, [navigate]);
 
   const handleInputSearch = useCallback(() => {
-    if (isProduct) {
+    if (search) {
+      dispatch({type:"SEARCH",payload:search});
       navigate("/catlog");
     }
-  }, [isProduct, navigate]);
+  }, [search, navigate]);
 
-  useEffect(() => {
-    const foundProduct = products.some((product) =>
-      product.category.toLowerCase().includes(search.toLowerCase())&&search.length>0
-    );
-    setIsProduct(foundProduct);
-  }, [products, search]);
+
 
   const [visible, cartToggle] = useCartDisplay();
   
