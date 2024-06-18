@@ -20,7 +20,7 @@ export const HomePageDashBoard = () => {
       <div id="landing_page_dashboard">
         <Header />
         <Navbar />
-        <Link to="/catlog"><HeroCarausal /></Link>
+        <HeroCarausal />
         <LandingPageCards />
         <Slider />
         <Link to="/catlog"><SetAndGifts /></Link>
