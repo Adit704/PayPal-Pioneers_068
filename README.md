@@ -39,6 +39,7 @@ PayPal Pioneers/<br>
 │ │ │ ├─...<br>
 │ │ ├─redux<br>
 │ │ │ │ ├─Actions<br>
+│ │ │ │ ├─reducers<br>
 │ │ │ │ │ ├─...<br>
 │ │ │ │ ├─...<br>
 │ │ │ ├─...<br>
