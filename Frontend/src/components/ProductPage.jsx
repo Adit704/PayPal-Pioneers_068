@@ -9,9 +9,11 @@ import { ProductReview } from './ProductReview';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { useToast } from '@chakra-ui/react';
+import { addToWishlist } from './wishlistFunctions';
 
 export const ProductPage = () => {
     const[item, setItem] = useState({});
+    const [isClicked, setIsClicked] = useState(false);
     const [loading, isLoading] = useState(false);
     const product_id = localStorage.getItem("currentCard");
     const navigate = useNavigate();
@@ -32,10 +34,23 @@ export const ProductPage = () => {
        fetchData();
     },[product_id]);
 
+    const handleAdd = async (id) => {
+        // dispatch({type:"DATA_FROM_PRODUCT_PAGE", payload : item})
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (!user) {
+            toast({title:"Login Required.", description:"Please login before to add item on wishlist", duration:1000, isClosable:true , status:"warning"});
 
-    const handleAdd = () => {
-        dispatch({type:"DATA_FROM_PRODUCT_PAGE", payload : item})
-    }
+            
+            return;
+        }
+        await addToWishlist(id);
+        setIsClicked(true);
+        toast({
+            title: "Added to wishlist",
+            status: 'success',
+            duration: 2000,
+        });
+    };
 
     const handleHomeNavigate = () => {
         navigate("/");
@@ -100,7 +115,8 @@ export const ProductPage = () => {
                                 </div>
                                 <div className='productpage-favicon'>
                                     <span><i className="fas fa-balance-scale legal-icon"></i></span>
-                                    <span onClick={handleAdd}><i className="fa-regular fa-heart heart-icon"></i></span>
+                                    <span onClick={()=>{handleAdd(item.id)}}>{!isClicked && <i className="fa-regular fa-heart heart-icon" ></i>}
+                                    {isClicked && <i className="fa-solid fa-heart" style={{ color: "#bf0d12" }}></i>}</span>
                                 </div>
                             </div>
                             {/* right top */}
