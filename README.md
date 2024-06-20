@@ -107,14 +107,6 @@ To run this project you need to have node packet manager ```npm``` for more [inf
 ![alt text](Frontend/src/assets/image-12.png)
 ![alt text](Frontend/src/assets/image-14.png)
 
-## API Used/Endpoints
-
-Data Servers: - https://paypal-pioneers-068.onrender.com/
-
-In case of Backend Applications provide a list of your API endpoints, methods, brief descriptions, and examples of request/response.
-- GET /api/items - retrieve all items
-- POST /api/items - create a new item
-- PUT /api/items - update particular data
 
 ## Contributors
 
